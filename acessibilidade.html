@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title> Saúde Exata </title>
+</head>
+<body>
+
+    <div class="barra_acessibilidade"> 
+        <div> 
+            <a tabindex="1" href="#menu">[1] ir para o menu </a>
+            <a tabindex="2" href="#conteudo">[2] ir para o conteudo </a>
+            <a tabindex="3" href="#rodape">[3] ir para o rodape </a>
+        </div>
+        <div>
+            <a tabindex="4" href="acessibilidade.html"> ACESSIBILIDADE</a>
+            <span tabindex="5" id="btn-contraste-on"> CONTRASTE PRETO </span>
+            <span tabindex="6" id="btn-contraste-off"> SEM CONTRASTE </span>
+            <span tabindex="7" id="btn-font-plus" onclick="increaseFont()"> A+ </span>
+            <span tabindex="8" id="btn-font-minus" onclick="decreaseFont()"> A- </span>
+        </div>
+    </div>
+
+    <header class="topo">
+        <h1 id="logo"><a href="index.html" tabindex="9"> Saúde Exata </a> </h1>
+        <nav>
+            <ul id="menu" class="menu" tabindex="-1">
+                <li><a class="text" href="index.html" tabindex="10">Início</a></li>
+                <li><a class="text" href="#" tabindex="11">Login</a></li>
+                <li><a class="text" href="#" tabindex="12">Contato</a></li>
+            </ul>
+            <div class="burger-icon" onclick="toggle_burger()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <ul class="burger-menu invisible">
+        <li><a class="text" href="index.html" tabindex="10">Início</a></li>
+        <li><a class="text" href="#" tabindex="11">login</a></li>
+        <li><a class="text" href="#" tabindex="12">Contato</a></li>
+    </ul>
+    
+    <!-- id dessa section é conteudo para reaproveitar o atalho de teclado -->
+    <section id="conteudo" class="information" tabindex="-1"> 
+        <article class="box-info">
+            <h2 class="titulo text"> Acessibilidade </h2>
+            <p class="text-info text"> Este website aplica funcionalidades que visam falicitar e ampliar o acesso às pessoas com deficiência visual, baixa visão, daltonismo, deficiência auditiva e mobilidade reduzida. </p>
+            <p class="text-info text"> Ao codificar suas páginas em conformidade com as recomendações do órgão que estabelece as diretrizes internacionais para a acessibilidade na web - Web Content Accessibility Guidelines (WCAG), atende ao que estabelece o art. 8º, § 3º, inciso VIII da Lei de Acesso à Informação (Lei nº 12.527/2011) , a Resolução-TSE nº 23.381/2012, o Decreto nº 5.296/2004 e o Decreto nº 6.949/2009.
+            </p>
+            <p class="text-info text"> Para aumentar a fonte, é só clicar no símbolo de A+ em nossa barra de acessibilidade. Caso queira voltar ao tamanho de fonte original, é só clicar em A-. </p>
+            <p class="text-info text"> Também é possível ativar o modo de contraste clicando no botão "Contraste preto" na barra de acessibilidade. Para desligar esse modo basta clicar no botão "Sem constraste" logo ao lado.</p>
+            <p class="text-info text"><b>Comandos do teclado:</b></p>
+            <p class="text-info text">
+                <b class="text">Alt + 1</b> Leva ao menu de navegação <br>
+                <b class="text">Alt + 2</b> Leva ao conteudo da pagina <br>
+                <b class="text">Alt + 3</b> Leva ao rodapé da pagina <br>
+            </p>
+        </article>
+    </section>
+    
+    <footer id="rodape" class="rodape" tabindex="-1"> 
+        <section class="mapa-site">
+            <h2 class="rodape-titulo"> Mapa do site </h2>
+
+            <h2 class="rodape-sub-titulo">Calculadoras</h2>
+            <ul class="lista-links">
+                <li><a href="IMC.html">Calculadora IMC</a></li>
+                <li><a href="TMB.html">Calculadora TMB</a></li>
+                <li><a href="BF.html">Calculadora BF</a></li>
+                <li><a href="MCR.html">Calculadora de Macros</a></li>
+            </ul>
+
+            <h2 class="rodape-sub-titulo">Profissionais de Saúde</h2>
+            <ul class="lista-links">
+                <li><a href="Profissionais.html">Lista de profissionais</a></li>
+            </ul>
+        </section>
+        <section class="social">
+            <h2 class="rodape-titulo"> Informações </h2>
+            <h2 class="rodape-sub-titulo">Quem somos</h2>
+            <h3 class="rodape-desc">Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sempre em forma! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar!</h3>
+
+            <h2 class="rodape-sub-titulo">Redes Sociais</h2>
+            <ul class="redes-sociais">
+                <li><a href="#"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
+                <li><a href="#"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
+                <li><a href="#"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
+                <li><a href="#"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
+                <li><a href="#"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+            </ul>
+
+            <h2 class="rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
+            <ul class="lista-links">
+                <li><a>Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a>Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a>Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a>Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a>Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a>Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+<script src="JS/contraste.js"></script>
+<script src="JS/app.js"></script>
+</html>
