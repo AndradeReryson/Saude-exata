@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
-    <title> Saúde Exata </title>
+    <title> Saúde Exata - IMC </title>
 </head>
 <body>
     <!-- elementos de texto teram uma classe .text para mudar o tamanho -->
@@ -57,7 +57,8 @@
     <main id="conteudo" class="conteudo" tabindex="-1">
         <form class="calculadora" name="calc">
             <h2 class="titulo text"> Calcule seu indíce IMC! </h2>
-            <div class="box-sexo">
+
+            <div class="box-radio-input">
                 <h2 class="label text"> Sexo* </h2>
                 <input type="radio" id="F" name="sexo" value="Femi" tabindex="13" required checked >
                 <label class="label-radio text" for="F"> Feminino </label>
@@ -65,19 +66,19 @@
                 <label class="label-radio text" for="M"> Masculino </label>
             </div>
 
-            <div class="box-idade">
+            <div class="box-num-input">
                 <label class="label text" for="idade"> Idade* </label> 
                 <input class="campo_num text" type="number" id="idade" name="txt_idade" tabindex="15" oninput="inputLimit(this, 3);" required> 
                 <h4 class="exemplo text"> Exemplo: 25 </h4>
             </div>
 
-            <div class="box-altura">
+            <div class="box-num-input">
                 <label class="label text" for="altura"> Altura(m)* </label> 
                 <input class="campo_num text" type="number" id="altura" name="txt_altura" tabindex="16" oninput="inputLimit(this, 4)" required>
                 <h4 class="exemplo text"> Exemplo: 1,75 </h4>
             </div>
 
-            <div class="box-peso">
+            <div class="box-num-input">
                 <label class="label text" for="peso"> Peso(Kg)* </label> 
                 <input class="campo_num text" type="number" id="peso" name="txt_peso" tabindex="17" oninput="inputLimit(this, 5)" required>
                 <h4 class="exemplo text"> Exemplo: 70,5 </h4>
@@ -89,15 +90,15 @@
             </div>
             
         </form> 
-        <div class="resultado">
+        <div class="resultado-big">
             <h2 class="titulo text"> Resultado </h2>
             <div class="placeholder ">
-                <h2 class="ph_text text"> Calcule seu IMC! Preencha os campos a esquerda e clique em calcular! =) </h2>
+                <h2 class="ph_text text"> Calcule seu peso ideal (IMC) Preencha os campos a esquerda e clique em calcular! =) </h2>
             </div>
 
             <div class="msg-resultado invisible">
-                <h2 class="text" id="value_imc"> </h2>
-                <h4 class="text" id="caption_imc"> </h4>
+                <h2 class="text value_result" id="imc_resultado"> </h2>
+                <h4 class="text caption_result" id="imc_legenda"> </h4>
                 <img id="img_imc" src="IMGS/obesidade-3.png"> 
             </div>
         </div>
@@ -105,13 +106,13 @@
 
     <section id="information" class="information">
         <article class="box-info">
-            <h2 class="titulo text"> O que é IMC? </h2>
+            <h2 class="titulo text" tabindex="19"> O que é IMC? </h2>
             <p class="text-info text"> O Brasil tem aproximadamente <b>18 milhões de pessoas consideradas obesas</b>. Se somarmos o total de indivíduos acima do peso, o montante chega a 70 milhões . A conformidade é fator de risco para uma série de doenças. O obeso tem mais propensão a desenvolver problemas como hipertensão, doenças cardiovasculares, diabetes tipo 2, entre outras. </p> 
             <p class="text-info text"> Para o diagnóstico da enfermidade, o padrão utilizado pela Organização Mundial da Saúde (OMS) é o <b>Índice de Massa Corporal (IMC)</b>. Com ele, é dividido o peso do paciente pela altura elevada ao quadrado, que identifica o peso normal quando o resultado do cálculo está entre 18,5 e 24,9.</p>
         </article>
 
         <article class="box-info">
-            <h2 class="titulo text"> Quais são os níveis do IMC? </h2>
+            <h2 class="titulo text" tabindex="20"> Quais são os níveis do IMC? </h2>
             <table>
                 <caption> Tabela com 3 colunas, sendo elas: valor do IMC, Classificação e Riscos a saudávei</caption>
                 <tr>
@@ -128,7 +129,7 @@
 
                 <tr>
                     <td class="column-reduce text"> 18.5 - 24.9 </td>
-                    <td class="text"> Peso normal </td>
+                    <td class="text"> Peso ideal </td>
                     <td class="text"> Menor risco de doenças cardíacas e vasculares </td>
                 </tr>
 
@@ -159,7 +160,7 @@
         </article>
 
         <article class="box-info">
-            <h2 class="titulo text"> Orientações para manter o peso ideal </h2>
+            <h2 class="titulo text" tabindex="21"> Orientações para manter o peso ideal </h2>
             <ol>
                 <li class="text"> <p class="text-info text"><b>Calcule seu IMC:</b> consulte um médico e peça a ajuda a um nutricionista, mesmo que se encontre no peso normal.</p></li>
                 <li class="text"> <p class="text-info text"><b>Alimentação equilibrada:</b> escolha uma rotina alimentar variada e com opções equilibradas para chegar ao peso ideal e conseguir mantê-lo. Além disso, beba, ao menos, 1,5 litros de água por dia.</p></li>
@@ -174,43 +175,43 @@
 
     <footer id="rodape" class="rodape" tabindex="-1"> 
         <section class="mapa-site">
-            <h2 class="rodape-titulo"> Mapa do site </h2>
+            <h2 class="text rodape-titulo"> Mapa do site </h2>
 
-            <h2 class="rodape-sub-titulo">Calculadoras</h2>
+            <h2 class="text rodape-sub-titulo">Calculadoras</h2>
             <ul class="lista-links">
-                <li><a href="IMC.html">Calculadora IMC</a></li>
-                <li><a href="TMB.html">Calculadora TMB</a></li>
-                <li><a href="BF.html">Calculadora BF</a></li>
-                <li><a href="MCR.html">Calculadora de Macros</a></li>
+                <li><a class="text" href="IMC.html" tabindex="22">Calculadora IMC</a></li>
+                <li><a class="text" href="TMB.html" tabindex="23">Calculadora TMB</a></li>
+                <li><a class="text" href="BF.html" tabindex="24">Calculadora BF</a></li>
+                <li><a class="text" href="MCR.html" tabindex="25">Calculadora de Macros</a></li>
             </ul>
 
-            <h2 class="rodape-sub-titulo">Profissionais de Saúde</h2>
+            <h2 class="text rodape-sub-titulo">Profissionais de Saúde</h2>
             <ul class="lista-links">
-                <li><a href="Profissionais.html">Lista de profissionais</a></li>
+                <li><a class="text" href="Profissionais.html" tabindex="26">Lista de profissionais</a></li>
             </ul>
         </section>
         <section class="social">
-            <h2 class="rodape-titulo"> Informações </h2>
-            <h2 class="rodape-sub-titulo">Quem somos</h2>
-            <h3 class="rodape-desc">Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sempre em forma! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar!</h3>
+            <h2 class="text rodape-titulo"> Informações </h2>
+            <h2 class="text rodape-sub-titulo">Quem somos</h2>
+            <h3 class="text rodape-desc">Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sua saúde em dia! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar!</h3>
 
-            <h2 class="rodape-sub-titulo">Redes Sociais</h2>
+            <h2 class="text rodape-sub-titulo">Redes Sociais</h2>
             <ul class="redes-sociais">
-                <li><a href="#"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
-                <li><a href="#"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
-                <li><a href="#"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
-                <li><a href="#"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
-                <li><a href="#"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+                <li><a href="#" tabindex="26"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
+                <li><a href="#" tabindex="27"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
+                <li><a href="#" tabindex="28"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
+                <li><a href="#" tabindex="29"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
+                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
             </ul>
 
-            <h2 class="rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
+            <h2 class="text rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
             <ul class="lista-links">
-                <li><a>Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a>Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a>Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a>Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a>Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a>Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="31">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="32">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="33">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="34">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="35">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="36">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
             </ul>
         </section>
     </footer>

@@ -138,7 +138,7 @@ h2.titulo-pagina{
     position: relative;
 }
 
-.calculadora, .resultado{
+.calculadora, .resultado-big, .resultado-small{
     margin: 3% 1%;
     box-shadow: 1px 1px 2px #000;
     font-family: helvetica, sans-serif;
@@ -156,15 +156,22 @@ h2.titulo-pagina{
     grid-template-columns: 1fr;
 }
 
-.resultado{
+.resultado-big{
     width: 35%;
     background-image: linear-gradient(#6AE9DE, #6AE99F);
     padding: 1em;
-    
     color: black;
 }
 
-.box-idade, .box-altura, .box-peso{
+.resultado-small{
+    width: 35%;
+    background-image: linear-gradient(#6AE9DE, #6AE99F);
+    padding: 1em;
+    color: black;
+    height: 60%;
+}
+
+.box-num-input{
     /*border: 2px white solid;*/
     position: relative;
     display: flex;
@@ -173,7 +180,17 @@ h2.titulo-pagina{
     padding: 10% 0 3% 0 ;
 }
 
-.box-sexo{
+.box-radio-input{
+    /*border: 2px white solid;*/
+    position: relative;
+    display: flex;
+    padding: 2.7vw 0 5% 0;
+    justify-content: center;
+    /**/
+    flex-wrap: wrap;
+}
+
+.box-select-input{
     /*border: 2px white solid;*/
     position: relative;
     display: flex;
@@ -238,6 +255,15 @@ h2.titulo-pagina{
     font-size: 1.1vw;
 }
 
+select{
+    padding: 3% 6%;
+    width: 70%;
+    border-radius: 1.3vw;
+    border: none;
+    font-family: helvetica, sans-serif;
+    font-size: 1.1vw;
+}
+
 input[type="radio"]{
     opacity: 0; /* Não pode ser display:none se não será impossivel selecionar o radio e consequentemente a label */
     position: absolute;
@@ -295,13 +321,14 @@ h2.titulo{
     height: 85%;
 }
 
-#value_imc{
+.value_result{
     text-align: center;
     font-size: 7vw;
     margin: 0;
+    padding: 0 0 0.3em 0;
 }
 
-#caption_imc{
+.caption_result{
     font-size: 1.5vw;
     margin: 0;
 }
@@ -323,12 +350,11 @@ h2.titulo{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .placeholder h2{
     width: 75%;
-    text-align: left;
+    text-align: center;
     font-size: 3vw;
 }
 
@@ -406,8 +432,6 @@ table, th, td{
     position: relative;
 }
 
-    /* Seções */
-
 .mapa-site{
     width: 30%;
 }
@@ -472,10 +496,9 @@ table, th, td{
     margin: 0 0.3em;
 }
 
-.new-tab{
+.new-tab{ /* icone que aparece na frente do nome dos desenvolvedores*/
     width: 0.8vw;
     height: 0.8vw;
-    fill: #828282;
 }
 
 /* reutilizado */
@@ -562,17 +585,21 @@ and (max-width: 1024px){
         outline: none;
     }
 
+    select, option{
+        font-size: 1.6vw;
+    }
+
     /* resultado */
 
     h2.titulo{
         font-size: 2.5vw;
     }
 
-    #value_imc{
+    .value_result{
         font-size: 8vw;
     }
 
-    #caption_imc{
+    .caption_result{
         font-size: 1.7vw;
     }
 
@@ -599,8 +626,8 @@ and (max-width: 1024px){
 
     /* footer */
 
-    .rodape p{
-        font-size: 2vw;
+    .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
+        font-size: 1.8vw;
     }
 
 }
@@ -694,14 +721,19 @@ and (max-width: 500px){
         width: 70%;
     }
 
-    .box-sexo{
+    .box-radio-input, .box-select-input{
         flex-wrap: wrap;
         padding-top: 4.3vh;
     }
 
-    .resultado{
+    .resultado-big{
         width: 70%;
         height: 45vh;
+    }
+
+    .resultado-small{
+        width: 70%;
+        height: 35vh;
     }
 
     #btn-calc, #btn-limp{
@@ -737,17 +769,21 @@ and (max-width: 500px){
         outline: none;
     }
 
+    select, option{
+        font-size: 3.5vw;
+    }
+
     /* resultado */
 
     h2.titulo{
         font-size: 4.5vw;
     }
 
-    #value_imc{
+    .value_result{
         font-size: 11vw;
     }
 
-    #caption_imc{
+    .caption_result{
         font-size: 3vw;
     }
 
@@ -783,10 +819,30 @@ and (max-width: 500px){
     
     /* footer */
 
-    .rodape p{
-        font-size: 3vw;
+    .rodape{
+        flex-direction: column;
+        align-items: center;
+        padding: 1% 1% 10% 1%;
     }
 
+    .mapa-site, .social{
+        width: 70%;
+    }
+
+    .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
+        font-size: 3.1vw;
+    }
+
+    .social-icon{
+        width: 3em;
+        height: 3em;
+    }
+
+    .new-tab{
+        width: 2vw;
+        height: 2vw;
+    }
+    
     /* javascript */
 
     .invisible{

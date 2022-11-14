@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title> Saúde Exata - TMB </title>
+</head>
+<body>
+    <!-- elementos de texto teram uma classe .text para mudar o tamanho -->
+
+    <div class="barra_acessibilidade"> 
+        <div> 
+            <a tabindex="1" href="#menu">[1] ir para o menu </a>
+            <a tabindex="2" href="#conteudo">[2] ir para o conteudo </a>
+            <a tabindex="3" href="#rodape">[3] ir para o rodape </a>
+        </div>
+        <div>
+            <a tabindex="4" href="acessibilidade.html"> ACESSIBILIDADE</a>
+            <span tabindex="5" id="btn-contraste-on"> CONTRASTE PRETO </span>
+            <span tabindex="6" id="btn-contraste-off"> SEM CONTRASTE </span>
+            <span tabindex="7" id="btn-font-plus" onclick="increaseFont()"> A+ </span>
+            <span tabindex="8" id="btn-font-minus" onclick="decreaseFont()"> A- </span>
+        </div>
+    </div>
+
+    <header class="topo">
+        <h1 id="logo"><a href="index.html" tabindex="9"> Saúde Exata </a> </h1>
+        <nav>
+            <ul id="menu" class="menu" tabindex="-1">
+                <li><a class="text" href="index.html" tabindex="10">Início</a></li>
+                <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
+                <li><a class="text" href="#" tabindex="12">Login</a></li>
+            </ul>
+            <div class="burger-icon" onclick="toggle_burger()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <ul class="burger-menu invisible">
+        <li><a class="text" href="index.html" tabindex="10">Início</a></li>
+        <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
+        <li><a class="text" href="#" tabindex="12">Login</a></li>
+    </ul>
+
+    <div class="linha-titulo">
+        <div class="box-titulo">
+            <h2 class="titulo-pagina text"> Calculadora TMB </h2>
+        </div>
+    </div>
+
+    <main id="conteudo" class="conteudo" tabindex="-1">
+        <form class="calculadora" name="calc">
+            <h2 class="titulo text"> Calcule seu indíce TMB! </h2>
+
+            <div class="box-radio-input">
+                <h2 class="label text"> Sexo* </h2>
+                <input type="radio" id="F" name="sexo" value="Femi" tabindex="13" required checked >
+                <label class="label-radio text" for="F"> Feminino </label>
+                <input type="radio" id="M" name="sexo" value="Masc" tabindex="14" required>
+                <label class="label-radio text" for="M"> Masculino </label>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="idade"> Idade* </label> 
+                <input class="campo_num text" type="number" id="idade" name="txt_idade" tabindex="15" oninput="inputLimit(this, 3);" required> 
+                <h4 class="exemplo text"> Exemplo: 25 </h4>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="altura"> Altura(cm)* </label> 
+                <input class="campo_num text" type="number" id="altura" name="txt_altura" tabindex="16" oninput="inputLimit(this, 3)" required>
+                <h4 class="exemplo text"> Exemplo: 175 </h4>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="peso"> Peso(Kg)* </label> 
+                <input class="campo_num text" type="number" id="peso" name="txt_peso" tabindex="17" oninput="inputLimit(this, 5)" required>
+                <h4 class="exemplo text"> Exemplo: 70,5 </h4>
+            </div>
+
+            <div class="box-select-input">
+                <label class="label text" for="exercicios"> Frequencia de exercícios* </label> 
+                <select class="text" name="slc-ex" id="exercicios" tabindex="18">
+                    <option class="text" value="1.2">Sedentário</option>
+                    <option class="text" value="1.375" selected>Levemente Ativo</option>
+                    <option class="text" value="1.55">Moderadamente Ativo</option>
+                    <option class="text" value="1.725">Altamente Ativo</option>
+                    <option class="text" value="1.9">Extremamente Ativo</option>
+                </select>
+            </div>
+            
+            
+            <div class="box-botoes">
+                <!-- <span type="reset" class="button" id="btn-limp" tabindex="11"> limpar </span> -->
+                <span class="button text" id="btn-calc" tabindex="19" onclick="calcularTMB()"> Calcular </span>
+            </div>
+            
+        </form> 
+        <div class="resultado-small">
+            <h2 class="titulo text"> Resultado </h2>
+            <div class="placeholder ">
+                <h2 class="ph_text text"> Calcule sua taxa de metabolismo basal (TMB). Preencha os campos a esquerda  =) </h2>
+            </div>
+
+            <div class="msg-resultado invisible">
+                <h4 class="text caption_result" id="tmb_legenda"> Taxa Metabólica Basal </h4>
+                <h2 class="text value_result" id="tmb_resultado"> </h2> 
+                <h4 class="text caption_result" id="ndc_legenda"> Consumo Diário de Calorias (Kcal) </h4>
+                <h2 class="text value_result" id="ndc_resultado"></h2>
+            </div>
+        </div>
+    </main>
+
+    <section id="information" class="information">
+        <!-- https://www.inchcalculator.com/mifflin-st-jeor-calculator/ -->
+        <!-- https://www.superprof.com.br/blog/por-que-alguns-necessitam-de-mais-energia-que-outros/ -->
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="20"> O que é Metabolismo Basal </h2>
+            <p class="text-info text"> Metabolismo basal pode ser entendido como a capacidade do organismo de transformar a energia obtida a partir da alimentação em combustível para o funcionamento dos órgãos e o desempenho das atividades do dia a dia.</p> 
+            <p class="text-info text"> À essa quantidade de energia necessária para manter os órgãos em atividade é chamada de taxa de metabolismo basal. Embora pareça pouco, essa modalidade representa o consumo de 70% do nosso gasto calórico diário. Os outros 20% vem da atividade cotidiana e 10% de outras fontes. Entretanto, essa necessidade de energia não é igual para todas as pessoas. </p>
+        </article>
+
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="21"> Como funciona o calculo da TMB?</h2>
+            <p class="text-info text"> Utilizamos a equação de Mifflin-St Jeor para o calculo da TMB. Sua formula é uma das mais utilizadas para este calculo pois tem um resultado mais preciso quando comparado com outras formulas. Existem duas equações utilizadas, uma para homens e outra para mulheres: </p> 
+            <p class="text-info text"> <b> Homens: (10 x Peso) + (6.25 x Altura) - (5 x idade) + 5 </b> </p>
+            <p class="text-info text"> <b> Mulheres: (10 x Peso) + (6.25 x Altura) - (5 x idade) - 161 </b> </p>
+        </article>
+
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="22"> E o calculo de quantas calorias estou consumindo? </h2>
+            <p class="text-info text"> Obtendo a Taxa Metabólica Basal podemos calcular a Necessidade Diaria de Calorias (NDC). Para isso, multiplicamos o valor da TMB por um índice referente a frequencia com que a pessoa realiza exercicios físicos. Segue abaixo uma tabela com os índices e a explicação de cada um: </p> 
+            <table>
+                <caption> </caption>
+                <tr>
+                    <th class="text">Nível de atividade</th>
+                    <th class="text column-reduce">Exemplo</th>
+                    <th class="text">Índice de atividade</th>
+                </tr>
+
+                <tr>
+                    <td class="text">Sedentário</td>
+                    <td class="text column-reduce">Pouco ou nenhum exercício, como trabalhar em uma área que não requer esforço físico</td>
+                    <td class="text">1.2</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Levemente Ativo</td>
+                    <td class="text column-reduce">Exercício leve, 1-2 dias por semana </td>
+                    <td class="text">1.375</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Moderadamente Ativo</td>
+                    <td class="text column-reduce">Exercício moderado, 3-5 dias por semana</td>
+                    <td class="text">1.55</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Altamente Ativo</td>
+                    <td class="text column-reduce">Exercíico pesado, 6-7 dias por semana</td>
+                    <td class="text">1.725</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Extremamente Ativo</td>
+                    <td class="text column-reduce">Exercício pesado diariamente e trabalho manual ou dois treinos pesados por dia </td>
+                    <td class="text">1.9</td>
+                </tr>
+            </table>
+        </article>
+
+    </section>
+
+    <footer id="rodape" class="rodape" tabindex="-1"> 
+        <section class="mapa-site">
+            <h2 class="text rodape-titulo"> Mapa do site </h2>
+
+            <h2 class="text rodape-sub-titulo">Calculadoras</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="IMC.html" tabindex="23">Calculadora IMC</a></li>
+                <li><a class="text" href="TMB.html" tabindex="24">Calculadora TMB</a></li>
+                <li><a class="text" href="BF.html" tabindex="25">Calculadora BF</a></li>
+                <li><a class="text" href="MCR.html" tabindex="26">Calculadora de Macros</a></li>
+            </ul>
+
+            <h2 class="text rodape-sub-titulo">Profissionais de Saúde</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="Profissionais.html" tabindex="27">Lista de profissionais</a></li>
+            </ul>
+        </section>
+        <section class="social">
+            <h2 class="text rodape-titulo"> Informações </h2>
+            <h2 id="rodape-quem-somos" class="text rodape-sub-titulo">Quem somos</h2>
+            <h3 class="text rodape-desc">Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sua saúde em dia! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar!</h3>
+
+            <h2 class="text rodape-sub-titulo">Redes Sociais</h2>
+            <ul class="redes-sociais">
+                <li><a href="#" tabindex="28"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
+                <li><a href="#" tabindex="29"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
+                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
+                <li><a href="#" tabindex="31"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
+                <li><a href="#" tabindex="32"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+            </ul>
+
+            <h2 class="text rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
+            <ul class="lista-links">
+                <li><a class="text" tabindex="33">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="34">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="35">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="36">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="37">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="38">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+<script src="JS/app.js"></script>
+<script src="JS/TMB.js"></script>
+<script src="JS/contraste.js"></script>
+</html>
