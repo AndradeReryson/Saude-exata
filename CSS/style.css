@@ -128,7 +128,7 @@ h2.titulo-pagina{
     margin: 0;
 }
 
-/* Calculadora e Resultado */
+/* Conteudo das paginas */
 
 .conteudo{
     align-self: center;
@@ -137,6 +137,14 @@ h2.titulo-pagina{
     padding: 0 0 2% 0;
     position: relative;
 }
+
+/* Pagina inicial */
+
+.quem-somos{
+    width: 100%;
+}
+
+/* Calculadora e resultado*/
 
 .calculadora, .resultado-big, .resultado-small{
     margin: 3% 1%;
@@ -728,7 +736,7 @@ and (max-width: 500px){
 
     .resultado-big{
         width: 70%;
-        height: 45vh;
+        height: 60vh;
     }
 
     .resultado-small{

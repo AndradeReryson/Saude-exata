@@ -93,6 +93,10 @@ function calcularTMB(){
             ph_visivel = false;
         }
 
+        idade = parseInt(idade)
+        altura = parseFloat(altura)
+        peso = parseFloat(peso)
+        
         let ndc = 0
         let tmb = 0
 

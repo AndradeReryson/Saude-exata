@@ -80,6 +80,9 @@ function calcularIMC(){
             ph_visivel = false;
         }
 
+        altura = parseFloat(altura)
+        peso = parseFloat(peso)
+
         var imc = peso / (altura**2);
         imc = imc.toFixed(2);
         var caption = "";

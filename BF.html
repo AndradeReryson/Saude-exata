@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title> Saúde Exata - BF </title>
+</head>
+<body>
+    <!-- elementos de texto teram uma classe .text para mudar o tamanho -->
+
+    <div class="barra_acessibilidade"> 
+        <div> 
+            <a tabindex="1" href="#menu">[1] ir para o menu </a>
+            <a tabindex="2" href="#conteudo">[2] ir para o conteudo </a>
+            <a tabindex="3" href="#rodape">[3] ir para o rodape </a>
+        </div>
+        <div>
+            <a tabindex="4" href="acessibilidade.html"> ACESSIBILIDADE</a>
+            <span tabindex="5" id="btn-contraste-on"> CONTRASTE PRETO </span>
+            <span tabindex="6" id="btn-contraste-off"> SEM CONTRASTE </span>
+            <span tabindex="7" id="btn-font-plus" onclick="increaseFont()"> A+ </span>
+            <span tabindex="8" id="btn-font-minus" onclick="decreaseFont()"> A- </span>
+        </div>
+    </div>
+
+    <header class="topo">
+        <h1 id="logo"><a href="index.html" tabindex="9"> Saúde Exata </a> </h1>
+        <nav>
+            <ul id="menu" class="menu" tabindex="-1">
+                <li><a class="text" href="index.html" tabindex="10">Início</a></li>
+                <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
+                <li><a class="text" href="#" tabindex="12">Login</a></li>
+            </ul>
+            <div class="burger-icon" onclick="toggle_burger()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <ul class="burger-menu invisible">
+        <li><a class="text" href="index.html" tabindex="10">Início</a></li>
+        <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
+        <li><a class="text" href="#" tabindex="12">Login</a></li>
+    </ul>
+
+    <div class="linha-titulo">
+        <div class="box-titulo">
+            <h2 class="titulo-pagina text"> Calculadora BF </h2>
+        </div>
+    </div>
+
+    <main id="conteudo" class="conteudo" tabindex="-1">
+        <form class="calculadora" name="calc">
+            <h2 class="titulo text"> Calcule seu índice BF! </h2>
+
+            <div class="box-radio-input">
+                <h2 class="label text"> Sexo* </h2>
+                <input type="radio" id="F" name="sexo" value="Femi" tabindex="13" required checked >
+                <label class="label-radio text" for="F"> Feminino </label>
+                <input type="radio" id="M" name="sexo" value="Masc" tabindex="14" required>
+                <label class="label-radio text" for="M"> Masculino </label>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="idade"> Idade* </label> 
+                <input class="campo_num text" type="number" id="idade" name="txt_idade" tabindex="15" oninput="inputLimit(this, 3);" required> 
+                <h4 class="exemplo text"> Exemplo: 25 </h4>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="altura"> Altura(cm)* </label> 
+                <input class="campo_num text" type="number" id="altura" name="txt_altura" tabindex="16" oninput="inputLimit(this, 3)" required>
+                <h4 class="exemplo text"> Exemplo: 175 </h4>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="peso"> Peso(Kg)* </label> 
+                <input class="campo_num text" type="number" id="peso" name="txt_peso" tabindex="17" oninput="inputLimit(this, 5)" required>
+                <h4 class="exemplo text"> Exemplo: 70,5 </h4>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="pescoco"> Pescoço(cm)* </label> 
+                <input class="campo_num text" type="number" id="pescoco" name="txt_pescoco" tabindex="18" oninput="inputLimit(this, 2)" required>
+                <h4 class="exemplo text"> Exemplo: 34 </h4>
+            </div>
+
+            <div class="box-num-input">
+                <label class="label text" for="cintura"> Cintura(cm)* </label> 
+                <input class="campo_num text" type="number" id="cintura" name="txt_cintura" tabindex="19" oninput="inputLimit(this, 3)" required>
+                <h4 class="exemplo text"> Exemplo: 78 </h4>
+            </div>
+
+            <div class="box-num-input only-fem">
+                <label class="label text" for="quadril"> Quadril(cm)* </label> 
+                <input class="campo_num text" type="number" id="quadril" name="txt_quadril" tabindex="20" oninput="inputLimit(this, 5)" required>
+                <h4 class="exemplo text"> Exemplo: 84 </h4>
+            </div>
+
+            <div class="box-botoes">
+                <!-- <span type="reset" class="button" id="btn-limp" tabindex="11"> limpar </span> -->
+                <span class="button text" id="btn-calc" tabindex="21" onclick="calcularBF()"> Calcular </span>
+            </div>
+
+        </form> 
+        <div class="resultado-big">
+            <h2 class="titulo text"> Resultado </h2>
+            <div class="placeholder">
+                <h2 class="ph_text text"> Calcule sua % de gordura corporal. Preencha os campos a esquerda  =) </h2>
+            </div>
+
+            <div class="msg-resultado invisible">
+                <h4 class="text caption_result"> % de Gordura Corporal </h4>
+                <h2 class="text value_result" id="bf_porcent"> 12.5% </h2> 
+                <h4 class="text caption_result"> % ideal para sua idade </h4>
+                <h2 class="text value_result" id="bf_ideal"> 10.5% </h2> 
+                <h4 class="text caption_result"> Perda de gordura para chegar ao ideal</h4>
+                <h2 class="text value_result" id="bf_perder"> 5.3kg </h2> 
+                <h4 class="text caption_result"> Sua categoria </h4>
+                <h2 class="text value_result" id="bf_categoria"> Atleta </h2> 
+            </div>
+        </div>
+    </main>
+
+    <section id="information" class="information">
+        <!-- https://www.calculator.net/body-fat-calculator.html?ctype=metric&csex=m&cage=25&cweightlbs=152&cheightfeet=5&cheightinch=10.5&cneckfeet=1&cneckinch=7.5&cwaistfeet=3&cwaistinch=1.5&chipfeet=2&chipinch=10.5&cweightkgs=80&cheightmeter=190&cneckmeter=34&cwaistmeter=78&chipmeter=92&x=51&y=25 -->
+        <!-- https://www.simetriamuscular.com.br/calculadora-gordura-corporal -->
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="22"> Como é feito o calculo? </h2>
+            <p class="text-info text"> O método usado aqui para calcular o BF("body fat" que é entendido em português como percentual de gordura corporal) é ultilizado pela marinha americana (Departamento de Defesa Americano) para medir a gordura corporal do pessoal, ou seja, é um método usado na prática e bastante difundido. Ele é baseado apenas em medidas corporais, portanto, fácil de se fazer em casa.</p> 
+            <p class="text-info text"> <b> Legenda </b> <br> 
+            A = Altura <br> C = Cintura <br> Q = Quadril <br> P = Pescoço </p>
+            <p class="text-info text"> <b> Formula para homens </b> <br> BF = 495/(1.0324 - 0.19077 x Log(C - P) + 0.15456 x log(A))-450</p>
+            <p class="text-info text"> <b> Formula para mulheres </b> <br> BF = 495/(1.29579 - 0.35004 x log(C + Q - P) + 0.22100 x log(A))-450</p>
+            <p class="text-info text"> Obs. O calculo utiliza log de base 10 </p>
+        </article>
+
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="23"> Categorização de Gordura Corporal </h2>
+            <p class="text-info text"> Categorização de Gordura Corporal ideal segundo a ACE (American Council on Exercise)</p>
+            <table>
+                <caption> Tabela sobre gordura corporal ideal. Apresenta 3 colunas, a primeira informa em qual categoria a pessoa se enquadra, a segunda diz qual a porcentagem de gordura corporal uma mulher de tal categoria deve ter e a terceira coluna diz qual a porcentagem de gordura corporal um homem de tal categoria deve ter</caption>
+                <tr>
+                    <th class="text"> Categoria </th>
+                    <th class="text"> Mulheres </th>
+                    <th class="text"> Homens </th> 
+                </tr>
+
+                <tr>
+                    <td class="text">Gordura Essencial</td>
+                    <td class="text">10-13%</td>
+                    <td class="text">2-5%</td>
+                </tr>
+                
+                <tr>
+                    <td class="text">Atletas</td>
+                    <td class="text">14-20%</td>
+                    <td class="text">6-13%</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Fitness</td>
+                    <td class="text">21-24%</td>
+                    <td class="text">14-17%</td>
+                </tr>
+                
+                <tr>
+                    <td class="text">Normal</td>
+                    <td class="text">25-31%</td>
+                    <td class="text">18-24%</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Obeso</td>
+                    <td class="text">Acima 32%</td>
+                    <td class="text">Acima 25%</td>
+                </tr>
+            </table>
+        </article>
+
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="24"> Gordura Corporal ideal para cada idade </h2>
+            <p class="text-info text"> Porcentagens de Gordura Corporal Ideal desenvolvidas por Jackson & Pollard</p>
+            <table>
+                <caption> Tabela sobre gordura corporal ideal. Apresenta 3 colunas, a primeira informa em qual categoria a pessoa se enquadra, a segunda diz qual a porcentagem de gordura corporal uma mulher de tal categoria deve ter e a terceira coluna diz qual a porcentagem de gordura corporal um homem de tal categoria deve ter</caption>
+                <tr>
+                    <th class="text"> Idade </th>
+                    <th class="text"> Mulheres </th>
+                    <th class="text"> Homens </th> 
+                </tr>
+
+                <tr>
+                    <td class="text">20</td>
+                    <td class="text">17.7%</td>
+                    <td class="text">8.5%</td>
+                </tr>
+                
+                <tr>
+                    <td class="text">25</td>
+                    <td class="text">18.4%</td>
+                    <td class="text">10.5%</td>
+                </tr>
+
+                <tr>
+                    <td class="text">30</td>
+                    <td class="text">19.3%</td>
+                    <td class="text">12.7%</td>
+                </tr>
+                
+                <tr>
+                    <td class="text">35</td>
+                    <td class="text">21.5%</td>
+                    <td class="text">13.7%</td>
+                </tr>
+
+                <tr>
+                    <td class="text">40</td>
+                    <td class="text">22.2%</td>
+                    <td class="text">15.3%</td>
+                </tr>
+
+                <tr>
+                    <td class="text">45</td>
+                    <td class="text">22.9%</td>
+                    <td class="text">16.4%</td>
+                </tr>
+                
+                <tr>
+                    <td class="text">50</td>
+                    <td class="text">25.2%</td>
+                    <td class="text">18.9%</td>
+                </tr>
+
+                <tr>
+                    <td class="text">55</td>
+                    <td class="text">26.3%</td>
+                    <td class="text">20.9%</td>
+                </tr>
+            </table>
+        </article>
+
+    </section>
+
+    <footer id="rodape" class="rodape" tabindex="-1"> 
+        <section class="mapa-site">
+            <h2 class="text rodape-titulo"> Mapa do site </h2>
+
+            <h2 class="text rodape-sub-titulo">Calculadoras</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="IMC.html" tabindex="25">Calculadora IMC</a></li>
+                <li><a class="text" href="TMB.html" tabindex="26">Calculadora TMB</a></li>
+                <li><a class="text" href="BF.html" tabindex="27">Calculadora BF</a></li>
+                <li><a class="text" href="MCR.html" tabindex="28">Calculadora de Macros</a></li>
+            </ul>
+
+            <h2 class="text rodape-sub-titulo">Profissionais de Saúde</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="Profissionais.html" tabindex="29">Lista de profissionais</a></li>
+            </ul>
+        </section>
+        <section class="social">
+            <h2 class="text rodape-titulo"> Informações </h2>
+            <h2 id="rodape-quem-somos" class="text rodape-sub-titulo">Quem somos</h2>
+            <h3 class="text rodape-desc">Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sua saúde em dia! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar!</h3>
+
+            <h2 class="text rodape-sub-titulo">Redes Sociais</h2>
+            <ul class="redes-sociais">
+                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
+                <li><a href="#" tabindex="31"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
+                <li><a href="#" tabindex="32"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
+                <li><a href="#" tabindex="33"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
+                <li><a href="#" tabindex="34"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+            </ul>
+
+            <h2 class="text rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
+            <ul class="lista-links">
+                <li><a class="text" tabindex="35">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="36">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="37">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="38">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="39">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="40">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+            </ul>
+        </section>
+    </footer>
+</body>
+<script src="JS/app.js"></script>
+<script src="JS/BF.js"></script>
+<script src="JS/contraste.js"></script>
+</html>
