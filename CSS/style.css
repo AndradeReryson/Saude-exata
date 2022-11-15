@@ -140,9 +140,77 @@ h2.titulo-pagina{
 
 /* Pagina inicial */
 
-.quem-somos{
+.apresentacao{
     width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../IMGS/fundo-inicial.jpg);
+    background-size: cover;
+    /**/
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    padding: 0 0 2% 0;
+    position: relative;
 }
+
+.quem-somos{
+    margin: 3% 10% 3% 1%;
+    box-shadow: 1px 1px 2px #000;
+    font-family: helvetica, sans-serif;
+    border-radius: 1.7em;
+    width: 35%;
+    background-color: #fff;
+    padding: 1.4em;
+    color: black;
+    opacity: 1;
+    font-family: helvetica;
+}
+
+.container-cards{
+    display: flex;
+    justify-content: center;
+    padding: 8vw 0 8vw 0;
+    position: relative;
+}
+
+.card-calc{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 3% 0;
+    margin: 3% 1%;
+    font-family: helvetica, sans-serif;
+    border-radius: 1.7em;
+}
+
+.card-calc a{
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.card-calc a p{
+    font-weight:bold;
+}
+.card-calc a:active, .card-calc a:visited{
+    color: #000;
+}
+
+.img-card{
+    width: 65%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    opacity: 0.8;
+}
+
+.img-card:hover{
+    opacity: 1;
+    transition: 0.2s;
+    border: 2px solid orangered;
+}
+
 
 /* Calculadora e resultado*/
 
@@ -555,6 +623,19 @@ and (max-width: 1024px){
         font-size: 3vw;
     }
 
+    /* conteudo */
+
+    /* pagina inicial*/
+
+    .apresentacao{
+        height: 90%;
+        justify-content: center;
+    }
+
+    .quem-somos{
+        width: 50%;
+        margin: 1%;
+    }
     /* calculadora e resultado */
     .calculadora{
         width: 40%;
@@ -719,6 +800,33 @@ and (max-width: 500px){
     }
 
     /* conteudo */
+
+    /* pagina inicial */
+    .apresentacao{
+        height: 80%;
+        justify-content: center;
+    }
+
+    .quem-somos{
+        width: 60%;
+        margin: 1%;
+    }
+
+    .container-cards{
+        padding: 3vh 0 3vh 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-calc{
+        width: 50%;
+    }
+
+    .card-calc a p{
+        font-size: 3vw;
+    }
+
+    /* calculadoras */
     .conteudo{
         align-self: center;
         flex-direction: column;
