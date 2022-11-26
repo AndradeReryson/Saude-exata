@@ -109,9 +109,8 @@ html, body{
 }
 
 .box-titulo{
-    width: 25%;
     background-image: linear-gradient(#9ce8e1, #a9e6a3 );
-    padding: 1.2vw;
+    padding: 1.2vw 3.5vw;
     color: black;
     box-shadow: 1px 1px 2px #000;
     font-family: helvetica, sans-serif;
@@ -166,6 +165,7 @@ h2.titulo-pagina{
     font-family: helvetica;
 }
 
+    /* Menu de calculadora da pagina inicial */
 .container-cards{
     display: flex;
     justify-content: center;
@@ -175,11 +175,11 @@ h2.titulo-pagina{
 
 .card-calc{
     width: 15%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 0 0 3% 0;
+    justify-content: space-between;
     margin: 3% 1%;
     font-family: helvetica, sans-serif;
     border-radius: 1.7em;
@@ -198,18 +198,32 @@ h2.titulo-pagina{
     color: #000;
 }
 
-.img-card{
-    width: 65%;
+.card-ball{
+    background-image: linear-gradient(#9ce8e1, #a9e6a3 );
+    width: 13vw;
+    height: 13vw;
     border-radius: 50%;
     border: 2px solid #fff;
     opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vw;
+    font-weight: bold;
 }
 
-.img-card:hover{
+.card-ball:hover, .card-calc .card-title:hover + .card-ball{
     opacity: 1;
     transition: 0.2s;
     border: 2px solid orangered;
 }
+
+.card-ball:focus{
+    opacity: 1;
+    transition: 0.2s;
+    outline: 3px solid orangered;
+}
+
 
 
 /* Calculadora e resultado*/
@@ -569,8 +583,20 @@ table, th, td{
 .social-icon{
     width: 2em;
     height: 2em;
-    margin: 0 0.3em;
 }
+
+.redes-sociais li{
+    display: flex;
+    justify-content: center;
+}
+
+.redes-sociais a{
+    width: 2em;
+    height: 2em;
+    margin: 0 0.3em;
+    border-radius: 50%;
+}
+
 
 .new-tab{ /* icone que aparece na frente do nome dos desenvolvedores*/
     width: 0.8vw;
@@ -636,6 +662,11 @@ and (max-width: 1024px){
         width: 50%;
         margin: 1%;
     }
+
+    .card-ball{
+        opacity: 1;
+    }
+
     /* calculadora e resultado */
     .calculadora{
         width: 40%;
@@ -823,7 +854,14 @@ and (max-width: 500px){
     }
 
     .card-calc a p{
-        font-size: 3vw;
+        font-size: 2.5vh;
+    }
+
+    .card-ball{
+        opacity: 1;
+        font-size: 3vh;
+        width: 26vh;
+        height: 26vh;
     }
 
     /* calculadoras */
@@ -946,7 +984,7 @@ and (max-width: 500px){
     }
 
     .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
-        font-size: 3.1vw;
+        font-size: 3.5vw;
     }
 
     .social-icon{

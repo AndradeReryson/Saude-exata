@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
-    <title> Saúde Exata </title>
+    <title> Saúde Exata - Calculadora de Macros </title>
 </head>
 <body>
     <!-- elementos de texto teram uma classe .text para mudar o tamanho -->
@@ -48,39 +48,89 @@
         <li><a class="text" href="#" tabindex="12">Login</a></li>
     </ul>
 
-    <div class="apresentacao">
-        <div class="quem-somos">
-            <h2 class="titulo text"> Quem Somos? </h2>
-            <p class="text-info text"> Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sua saúde em dia! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar! </p> 
-            <p class="text-info text"> Oferecemos quatro calculadoras para que você acompanhe seus índices corporais. Aqui você pode verificar seu índice de massa corporal (IMC), índice de gordura corporal (BF), taxa de metabolismo basal (TMB) e por fim uma tabela de macronutrientes (Macros) de acordo com seu objetivo  </p> 
-
+    <div class="linha-titulo">
+        <div class="box-titulo">
+            <h2 class="titulo-pagina text"> Calculadora de macronutrientes</h2>
         </div>
     </div>
-    
+
     <main id="conteudo" class="conteudo" tabindex="-1">
-        <div class="container-cards">
-            <div class="card-calc">
-                <a class="card-title" href="IMC.html" tabindex="-1"><p class="text-info text"> Calculdora de Peso Ideal</p></a>
-                <a class="card-ball" href="IMC.html" tabindex="13">IMC</a>
+        <form class="calculadora" name="calc">
+            <h2 class="titulo text"> Calcule quanto deve consumir! </h2>
+
+            <div class="box-radio-input">
+                <h2 class="label text"> Sexo* </h2>
+                <input type="radio" id="F" name="sexo" value="Femi" tabindex="13" required checked >
+                <label class="label-radio text" for="F"> Feminino </label>
+                <input type="radio" id="M" name="sexo" value="Masc" tabindex="14" required>
+                <label class="label-radio text" for="M"> Masculino </label>
             </div>
-            <!---->
-            <div class="card-calc">
-                <a class="card-title" href="TMB.html" tabindex="-1"><p class="text-info text"> Calculadora de Taxa Metabólica Basal</p></a>
-                <a class="card-ball" href="TMB.html" tabindex="14">TMB</a>
+
+            <div class="box-num-input">
+                <label class="label text" for="idade"> Idade* </label> 
+                <input class="campo_num text" type="number" id="idade" name="txt_idade" tabindex="15" oninput="inputLimit(this, 3);" required> 
+                <h4 class="exemplo text"> Exemplo: 25 </h4>
             </div>
-            <!---->
-            <div class="card-calc">
-                <a class="card-title" href="BF.html" tabindex="-1"><p class="text-info text"> Calculadora de Gordura Corporal</p></a>
-                <a class="card-ball" href="BF.html" tabindex="15">BF</a>
+
+            <div class="box-num-input">
+                <label class="label text" for="altura"> Altura(cm)* </label> 
+                <input class="campo_num text" type="number" id="altura" name="txt_altura" tabindex="16" oninput="inputLimit(this, 3)" required>
+                <h4 class="exemplo text"> Exemplo: 175 </h4>
             </div>
-            <!---->
-            <div class="card-calc">
-                <a class="card-title" href="Macros.html" tabindex="-1"><p class="text-info text"> Calculadora de macronutrientes </p></a>
-                <a class="card-ball" href="Macros.html" tabindex="16">Macros</a>
+
+            <div class="box-num-input">
+                <label class="label text" for="peso"> Peso(Kg)* </label> 
+                <input class="campo_num text" type="number" id="peso" name="txt_peso" tabindex="17" oninput="inputLimit(this, 5)" required>
+                <h4 class="exemplo text"> Exemplo: 70,5 </h4>
+            </div>
+
+            <div class="box-select-input">
+                <label class="label text" for="exercicios"> Frequência de exercícios* </label> 
+                <select class="text" name="slc-ex" id="exercicios" tabindex="18">
+                    <option class="text" value="1.2">Sedentário</option>
+                    <option class="text" value="1.375" selected>Levemente Ativo</option>
+                    <option class="text" value="1.55">Moderadamente Ativo</option>
+                    <option class="text" value="1.725">Altamente Ativo</option>
+                    <option class="text" value="1.9">Extremamente Ativo</option>
+                </select>
+            </div>
+
+            <div class="box-select-input">
+                <label class="label text" for="objetivo"> Objetivo </label>
+                <select class="text" name="slc-obj" id="objetivo" tabindex="19">
+                    <option class="text" value="perder"></option>
+                    <option class="text" value="manter"></option>
+                    <option class="text" value="ganhar"></option>
+                </select>
+            </div>
+            
+            <div class="box-botoes">
+                <!-- <span type="reset" class="button" id="btn-limp" tabindex="11"> limpar </span> -->
+                <span class="button text" id="btn-calc" tabindex="18" onclick="calcularMacros()"> Calcular </span>
+            </div>
+            
+        </form> 
+        <div class="resultado-big">
+            <h2 class="titulo text"> Resultado </h2>
+            <div class="placeholder ">
+                <h2 class="ph_text text"> Calcule seu peso ideal (IMC) Preencha os campos a esquerda e clique em calcular! =) </h2>
+            </div>
+
+            <div class="msg-resultado invisible">
+                <h2 class="text value_result" id="imc_resultado"> </h2>
+                <h4 class="text caption_result" id="imc_legenda"> </h4>
+                <img id="img_imc" src="IMGS/obesidade-3.png"> 
             </div>
         </div>
     </main>
 
+    <section id="information" class="information">
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="19"> O que é IMC? </h2>
+            <p class="text-info text"> O Brasil tem aproximadamente <b>18 milhões de pessoas consideradas obesas</b>. Se somarmos o total de indivíduos acima do peso, o montante chega a 70 milhões . A conformidade é fator de risco para uma série de doenças. O obeso tem mais propensão a desenvolver problemas como hipertensão, doenças cardiovasculares, diabetes tipo 2, entre outras. </p> 
+            <p class="text-info text"> Para o diagnóstico da enfermidade, o padrão utilizado pela Organização Mundial da Saúde (OMS) é o <b>Índice de Massa Corporal (IMC)</b>. Com ele, é dividido o peso do paciente pela altura elevada ao quadrado, que identifica o peso normal quando o resultado do cálculo está entre 18,5 e 24,9.</p>
+        </article>
+    </section>
 
     <footer id="rodape" class="rodape" tabindex="-1"> 
         <section class="mapa-site">
@@ -126,5 +176,6 @@
     </footer>
 </body>
 <script src="JS/app.js"></script>
+<script src="JS/IMC.js"></script>
 <script src="JS/contraste.js"></script>
 </html>
