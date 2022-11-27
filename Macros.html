@@ -84,6 +84,11 @@
                 <h4 class="exemplo text"> Exemplo: 70,5 </h4>
             </div>
 
+            <div class="box-num-input">
+                <label class="label text" for="refeicoes"> Nº de Refeições diárias* </label> 
+                <input class="campo_num text" type="number" id="refeicoes" name="txt_refeicoes" tabindex="18" oninput="inputLimit(this, 2)" required>
+            </div>
+
             <div class="box-select-input">
                 <label class="label text" for="exercicios"> Frequência de exercícios* </label> 
                 <select class="text" name="slc-ex" id="exercicios" tabindex="18">
@@ -96,11 +101,11 @@
             </div>
 
             <div class="box-select-input">
-                <label class="label text" for="objetivo"> Objetivo </label>
+                <label class="label text" for="objetivo"> Objetivo* </label>
                 <select class="text" name="slc-obj" id="objetivo" tabindex="19">
-                    <option class="text" value="perder"></option>
-                    <option class="text" value="manter"></option>
-                    <option class="text" value="ganhar"></option>
+                    <option class="text" value="perder">Perder Peso</option>
+                    <option class="text" value="manter">Manter Peso</option>
+                    <option class="text" value="ganhar">Ganhar Peso</option>
                 </select>
             </div>
             
@@ -112,23 +117,139 @@
         </form> 
         <div class="resultado-big">
             <h2 class="titulo text"> Resultado </h2>
-            <div class="placeholder ">
-                <h2 class="ph_text text"> Calcule seu peso ideal (IMC) Preencha os campos a esquerda e clique em calcular! =) </h2>
+            <div class="placeholder">
+                <h2 class="ph_text text"> Calcule quanto você deve consumir de acordo com seu objetivo. Preencha os campos a esqueda =) </h2>
             </div>
 
-            <div class="msg-resultado invisible">
-                <h2 class="text value_result" id="imc_resultado"> </h2>
-                <h4 class="text caption_result" id="imc_legenda"> </h4>
-                <img id="img_imc" src="IMGS/obesidade-3.png"> 
+            <div class="msg-resultado  invisible">
+                <h4 class="text caption_result"> Consumo Calórico Total (Kcal) </h4>
+                <h2 class="text value_result" id="consumo-kcal"> </h2>
+                <table class="tbl-resultado">
+                    <caption></caption>
+
+                    <tr>
+                        <td class="text">Proteina</td>
+                        <td class="text td-result" id="result-prot"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="text">Gordura</td>
+                        <td class="text td-result" id="result-gord"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="text">Carboidratos</td>
+                        <td class="text td-result" id="result-carb"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="text">Fibras</td>
+                        <td class="text td-result"> 100-140 Kcal</td>
+                    </tr>
+                </table>
+                <h4 class="text caption_result"> Consumo de Calorias por Refeição</h4>
+                <h2 class="text value_result" id="kcal-refeicao"> </h2>
+                <table class="tbl-resultado">
+                    <caption></caption>
+                    <tr>
+                        <td class="text">Proteina</td>
+                        <td class="text td-result" id="refeicao-prot"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="text">Gordura</td>
+                        <td class="text td-result" id="refeicao-gord"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="text">Carboidratos</td>
+                        <td class="text td-result" id="refeicao-carb"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="text">Fibras</td>
+                        <td class="text td-result" id="refeicao-fibra"></td>
+                    </tr>
+
+                </table>
             </div>
+            
         </div>
     </main>
 
     <section id="information" class="information">
         <article class="box-info">
-            <h2 class="titulo text" tabindex="19"> O que é IMC? </h2>
-            <p class="text-info text"> O Brasil tem aproximadamente <b>18 milhões de pessoas consideradas obesas</b>. Se somarmos o total de indivíduos acima do peso, o montante chega a 70 milhões . A conformidade é fator de risco para uma série de doenças. O obeso tem mais propensão a desenvolver problemas como hipertensão, doenças cardiovasculares, diabetes tipo 2, entre outras. </p> 
-            <p class="text-info text"> Para o diagnóstico da enfermidade, o padrão utilizado pela Organização Mundial da Saúde (OMS) é o <b>Índice de Massa Corporal (IMC)</b>. Com ele, é dividido o peso do paciente pela altura elevada ao quadrado, que identifica o peso normal quando o resultado do cálculo está entre 18,5 e 24,9.</p>
+            <h2 class="titulo text" tabindex="19"> O que são macronutrientes? </h2>
+            <p class="text-info text"> Os macronutrientes podem ser definidos como os elementos que fornecem grande parte da força e do vigor físico necessário para o nosso corpo se manter ativo. Por reporem as energias gastas durante o dia a dia, são considerados indispensáveis para uma vivência saudável. </p> 
+            <p class="text-info text"> Responsáveis por fornecer 100% de nossa energia, sua ingestão diária é fundamental para a conquista de um corpo saudável, equilibrado e bem-disposto. O grupo dos macronutrientes é formado por 3 elementos: carboidratos, proteínas e lipídios (gordura). Cada um deles tem atuação importante em nosso organismo — e em nossa rotina. </p>
+        </article>
+
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="19"> Tabela de macronutrientes </h2>
+            <table>
+                <legend></legend>
+                <tr>
+                    <th class="text"> </th>
+                    <th class="text"> </th>
+                    <th class="text"> </th>
+                </tr>
+                
+            </table>
+        </article>
+
+        <article class="box-info">
+            <h2 class="titulo text" tabindex="19"> Como é feito o calculo? </h2>
+            <p class="text-info text"> </p>Utilizamos a equação de Mifflin-St Jeor para o calculo da TMB. Sua formula é uma das mais utilizadas para este calculo pois tem um resultado mais preciso quando comparado com outras formulas. Existem duas equações utilizadas, uma para homens e outra para mulheres: </p> 
+            <p class="text-info text"> <b> Homens: (10 x Peso) + (6.25 x Altura) - (5 x idade) + 5 </b> </p>
+            <p class="text-info text"> <b> Mulheres: (10 x Peso) + (6.25 x Altura) - (5 x idade) - 161 </b> </p>
+            <p class="text-info text"> Obtendo a Taxa Metabólica Basal podemos calcular a Necessidade Diaria de Calorias (NDC). Para isso, multiplicamos o valor da TMB por um índice referente a frequencia com que a pessoa realiza exercicios físicos. Segue abaixo uma tabela com os índices e a explicação de cada um: </p>
+            <table>
+                <caption> </caption>
+                <tr>
+                    <th class="text">Nível de atividade</th>
+                    <th class="text column-reduce">Exemplo</th>
+                    <th class="text">Índice de atividade</th>
+                </tr>
+
+                <tr>
+                    <td class="text">Sedentário</td>
+                    <td class="text column-reduce">Pouco ou nenhum exercício, como trabalhar em uma área que não requer esforço físico</td>
+                    <td class="text">1.2</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Levemente Ativo</td>
+                    <td class="text column-reduce">Exercício leve, 1-2 dias por semana </td>
+                    <td class="text">1.375</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Moderadamente Ativo</td>
+                    <td class="text column-reduce">Exercício moderado, 3-5 dias por semana</td>
+                    <td class="text">1.55</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Altamente Ativo</td>
+                    <td class="text column-reduce">Exercício pesado, 6-7 dias por semana</td>
+                    <td class="text">1.725</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Extremamente Ativo</td>
+                    <td class="text column-reduce">Exercício pesado diariamente e trabalho manual ou dois treinos pesados por dia </td>
+                    <td class="text">1.9</td>
+                </tr>
+            </table>
+            <p class="text-info text"> Após isso, modificamos o consumo de calorias diários de acordo com o objetivo do usuário. Caso ele queira emagrecer, <b> reduzimos as calorias diarias em 20%</b>. Caso queria ganhar peso, <b>aumentamos as calorias diarias em 10%</b>.</p>
+            <p class="text-info text"> Depois, calculamos as quantidades ideais de proteina e gordura. A quantidade ideal de proteina é de <b>1,8 gramas por quilo</b>, já a quantidae ideal de gordura é de <b>0,7 gramas por quilo</b>.</p>
+            <p class="text-info text"> Cada macronutriente possui uma quantidade de calorias:</p>
+            <ul class="lista">
+                <li class="text">1g de proteina = 4 calorias</li>
+                <li class="text">1g de carboidrato = 4 calorias</li>
+                <li class="text">1g de proteina = 9 calorias</li>
+            </ul>
+            <p class="text-info text"> Descobrimos a quantidade de calorias destinadas a proteina e gordura pela multiplicação destas pela quantidade de calorias por grama. Já o calculo dos carboidratos é: <b> quantidade de calorias diarias - (calorias de proteina + calorias de gordura)</p>
         </article>
     </section>
 
@@ -176,6 +297,6 @@
     </footer>
 </body>
 <script src="JS/app.js"></script>
-<script src="JS/IMC.js"></script>
+<script src="JS/Macros.js"></script>
 <script src="JS/contraste.js"></script>
 </html>

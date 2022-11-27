@@ -440,6 +440,24 @@ h2.titulo{
     fill: white;
 }
 
+.tbl-resultado{
+    width: 70%;
+    background-color: transparent;
+}
+
+.tbl-resultado tr td, .tbl-resultado{
+    border: none;
+}
+
+.tbl-resultado tr td{
+    font-size: 1.5vw
+}
+
+.tbl-resultado td.td-result{
+    text-align: right;
+    font-weight: bold;
+}
+
     /* placeholder */
     
 .placeholder{
@@ -498,6 +516,15 @@ h2.titulo{
 
 ol li{
     font-size: 1.3vw;
+}
+
+ul.lista{
+    padding-left: 5vw;
+}
+
+ul.lista li, ul.lista{
+    font-size: 1.6vw;
+    margin: 0;
 }
 
 /* tabelas */
@@ -671,7 +698,7 @@ and (max-width: 1024px){
     /* pagina inicial*/
 
     .apresentacao{
-        height: 90%;
+        height: 80%;
         justify-content: center;
     }
 
@@ -760,6 +787,12 @@ and (max-width: 1024px){
     ol li{
         font-size: 1.6vw;
     }
+
+    ul.lista li, ul.lista{
+        font-size: 2.2vw;
+        margin: 0;
+    }
+    
     
     /* footer */
 
@@ -879,18 +912,17 @@ and (max-width: 500px){
 
     .card-calc{
         width: 50%;
-        margin-bottom: 22em;
     }
 
     .card-calc a p{
-        font-size: 2.5vh;
+        font-size: 4vw;
     }
 
     .card-ball{
         opacity: 1;
-        font-size: 3vh;
-        width: 26vh;
-        height: 26vh;
+        font-size: 6.5vw;
+        width: 40vw;
+        height: 40vw;
     }
 
     /* calculadoras*/
@@ -975,6 +1007,10 @@ and (max-width: 500px){
         font-size: 4.5vw;
     }
 
+    .tbl-resultado tr td{
+        font-size: 3.5vw
+    }
+    
     /* placeholder */
 
     /* Conteudo textual */
@@ -1000,6 +1036,12 @@ and (max-width: 500px){
     ol li{
         font-size: 2.8vw;
     }
+
+    ul.lista li, ul.lista{
+        font-size: 3.2vw;
+        margin: 0;
+    }
+    
 
     /* footer */
 
