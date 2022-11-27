@@ -92,8 +92,8 @@ function inputLimit(input, max){
 
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
-        button.click();
-        document.querySelector('input[name="sexo"]:checked').focus(); /* focus volta pro botão de sexo*/
+        button.click()
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'})/* leva a tela ao resultado*/
     }
 });
 
@@ -230,15 +230,7 @@ function calcularBF(){
         document.querySelector('#bf_perder').innerHTML = bf_perder+"Kg";
         document.querySelector('#bf_categoria').innerHTML = bf_categoria;
 
-        /* controlando o scroll
-
-        let element = document.querySelector('.conteudo');
-        let coord_x = element.getBoundingClientRect().left;
-        let coord_y = element.getBoundingClientRect().top;
-        console.log(coord_x, coord_y);
-
-        let  
-        */
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'top'});
 
     }
 

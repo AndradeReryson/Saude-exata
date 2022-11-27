@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
+    <link rel="icon" href="IMGS/saude-exata-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <title> Saúde Exata - Acessibilidade </title>
 </head>
 <body>
@@ -26,12 +29,22 @@
     </div>
 
     <header class="topo">
-        <h1 id="logo"><a href="index.html" tabindex="9"> Saúde Exata </a> </h1>
+        <div id="container-logo" tabindex="-1">
+            <a class="logo" href="index.html" tabindex="-1"><img src="IMGS/saude-exata-logo.png" alt="Logo nas cores amarelo e laranja do site saude exata"></a>
+            <h1 class="logo"><a href="index.html" tabindex="9"> <part1>Saúde</part1><part2>Exata</part2> </a> </h1>
+        </div>
         <nav>
             <ul id="menu" class="menu" tabindex="-1">
                 <li><a class="text" href="index.html" tabindex="10">Início</a></li>
-                <li><a class="text" href="#" tabindex="11">Login</a></li>
-                <li><a class="text" href="#" tabindex="12">Contato</a></li>
+                <li><a id="btn-nav-calculadoras" class="text" tabindex="11">Calculadoras</a>
+                    <ul class="sub-menu">
+                        <li><a class="text" href="IMC.html">Peso Ideal</a></li>
+                        <li><a class="text" href="TMB.html">Taxa Metabólica Basal</a></li>
+                        <li><a class="text" href="BF.html">Gordura Corporal</a></li>
+                        <li><a class="text" href="Macros.html">Macronutrientes</a></li>
+                    </ul>
+                </li>
+                <li><a class="text" href="#" tabindex="12">Login</a></li>
             </ul>
             <div class="burger-icon" onclick="toggle_burger()">
                 <div></div>
@@ -41,16 +54,30 @@
         </nav>
     </header>
 
+    <!-- vlibras -->
+    <div class="vlibras">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+    
     <ul class="burger-menu invisible">
-        <li><a class="text" href="index.html" tabindex="10">Início</a></li>
-        <li><a class="text" href="#" tabindex="11">login</a></li>
-        <li><a class="text" href="#" tabindex="12">Contato</a></li>
+        <li><a class="text" href="index.html" tabindex="-1">Início</a></li>
+        <li><a class="text" href="#" tabindex="-1">login</a></li>
+        <li><a class="text" href="#" tabindex="-1">Contato</a></li>
     </ul>
     
     <!-- id dessa section é conteudo para reaproveitar o atalho de teclado -->
     <section id="conteudo" class="information" tabindex="-1"> 
         <article class="box-info">
-            <h2 class="titulo text"> Acessibilidade </h2>
+            <h2 class="titulo text" tabindex="13"> Acessibilidade </h2>
             <p class="text-info text"> Este website aplica funcionalidades que visam falicitar e ampliar o acesso às pessoas com deficiência visual, baixa visão, daltonismo, deficiência auditiva e mobilidade reduzida. </p>
             <p class="text-info text"> Ao codificar suas páginas em conformidade com as recomendações do órgão que estabelece as diretrizes internacionais para a acessibilidade na web - Web Content Accessibility Guidelines (WCAG), atende ao que estabelece o art. 8º, § 3º, inciso VIII da Lei de Acesso à Informação (Lei nº 12.527/2011) , a Resolução-TSE nº 23.381/2012, o Decreto nº 5.296/2004 e o Decreto nº 6.949/2009.
             </p>
@@ -69,17 +96,22 @@
         <section class="mapa-site">
             <h2 class="text rodape-titulo"> Mapa do site </h2>
 
+            <h2 class="text rodape-sub-titulo">Site</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="index.html" tabindex="14">Pagina inicial</a></li>
+            </ul>
+            
             <h2 class="text rodape-sub-titulo">Calculadoras</h2>
             <ul class="lista-links">
-                <li><a class="text" href="IMC.html" tabindex="22">Calculadora IMC</a></li>
-                <li><a class="text" href="TMB.html" tabindex="23">Calculadora TMB</a></li>
-                <li><a class="text" href="BF.html" tabindex="24">Calculadora BF</a></li>
-                <li><a class="text" href="Macros.html" tabindex="25">Calculadora de Macros</a></li>
+                <li><a class="text" href="IMC.html" tabindex="15">Calculadora IMC</a></li>
+                <li><a class="text" href="TMB.html" tabindex="16">Calculadora TMB</a></li>
+                <li><a class="text" href="BF.html" tabindex="17">Calculadora BF</a></li>
+                <li><a class="text" href="Macros.html" tabindex="18">Calculadora de Macros</a></li>
             </ul>
 
             <h2 class="text rodape-sub-titulo">Profissionais de Saúde</h2>
             <ul class="lista-links">
-                <li><a class="text" href="Profissionais.html" tabindex="26">Lista de profissionais</a></li>
+                <li><a class="text" href="Profissionais.html" tabindex="19">Lista de profissionais</a></li>
             </ul>
         </section>
         <section class="social">
@@ -89,21 +121,21 @@
 
             <h2 class="text rodape-sub-titulo">Redes Sociais</h2>
             <ul class="redes-sociais">
-                <li><a href="#" tabindex="26"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
-                <li><a href="#" tabindex="27"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
-                <li><a href="#" tabindex="28"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
-                <li><a href="#" tabindex="29"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
-                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+                <li><a href="#" tabindex="20"><img class="social-icon" src="IMGS/icon-email.png" alt="icone do botão de email para contato"></a></li>
+                <li><a href="#" tabindex="21"><img class="social-icon" src="IMGS/icon-face.png" alt="icone do botão do facebook para contato"></a></li>
+                <li><a href="#" tabindex="22"><img class="social-icon" src="IMGS/icon-insta.png" alt="icone do botão do instagram para contato"></a></li>
+                <li><a href="#" tabindex="23"><img class="social-icon" src="IMGS/icon-twitter.png" alt="icone do botão do twitter para contato"></a></li>
+                <li><a href="#" tabindex="24"><img class="social-icon" src="IMGS/icon-whats.png" alt="icone do botão do whatsapp para contato"></a></li>
             </ul>
 
             <h2 class="text rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
             <ul class="lista-links">
-                <li><a class="text" tabindex="31">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="32">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="33">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="34">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="35">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="36">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="25">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="26">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="27">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="28">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="29">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="30">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
             </ul>
         </section>
     </footer>

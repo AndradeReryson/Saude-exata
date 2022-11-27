@@ -77,7 +77,7 @@ function inputLimit(input, max){
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
         button.click();
-        document.querySelector('#consumo-kcal').scrollIntoView({behavior:'smooth', block:'center'}); 
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'top'}); 
     }
 });
 
@@ -149,6 +149,6 @@ function calcularMacros(){
         document.querySelector('#refeicao-carb').innerHTML = carb_refeicao+" Kcal"
         document.querySelector('#refeicao-fibra').innerHTML = fibra_refeicao+" Kcal";
 
-        document.querySelector('#consumo-kcal').scrollIntoView({behavior:'smooth', block:'center'});
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'});
     }
 }

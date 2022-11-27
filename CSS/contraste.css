@@ -1,3 +1,5 @@
+/*font-family: 'Kanit', sans-serif;*/
+
 html, body{
     height: 100%;
     margin: 0;
@@ -54,17 +56,47 @@ html, body{
     flex-wrap: wrap;
 }
 
-#logo{
+.logo{
     margin: 0;
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: consolas;
     font-weight: lighter;
     text-shadow: 1px 1px 2px black;
 }
 
-#logo a{
+.logo a{
     color: yellow;
     text-decoration: underline;
+    font-family: 'kanit', 'helvetica', 'sans-serif';
+}
+
+.logo part1{
+    color: yellow;
+}
+
+.logo part2{
+    color: yellow;
+}
+
+.logo img{
+    height: 4vw;
+    width: 4vw;
+    margin-right: 1vw;
+}
+
+#container-logo, nav{
+    /*ambos vão deixar um espaço livre entre si*/
+    width: 48%;
+    display: flex;
+    align-items: center;
+}
+
+#container-logo{
+    justify-content: left;
+}
+
+nav{
+    justify-content: right;
 }
 
 .menu{
@@ -81,7 +113,7 @@ html, body{
     font-family: helvetica, sans-serif;
     font-weight: bold;
     border-radius: 15px;
-    text-decoration: none;
+    text-decoration: underline;
     color: yellow;
 }
 
@@ -98,6 +130,49 @@ html, body{
     color: white;
     background-color: black;
     transition: 0.4s;
+}
+
+    /* submenu das calculadoras */
+
+.menu li .sub-menu{
+    height: 0%;
+    padding: 0;
+    position: absolute;
+    background-image: none;
+    background-color: black;
+    border-radius: 15px;
+    top: 6vw;
+    transition: 0.5s;
+    z-index: 3;
+    list-style: none;
+    overflow: hidden;
+}
+
+.menu li .sub-menu li{
+    margin-bottom: 1.5vw;
+    transition: 0.5s;
+}
+
+.menu li .sub-menu li:first-child{
+    padding-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    transition: 0.5s;
+}
+
+.menu li .sub-menu li:last-child{
+    transition: 0.5s;
+}
+
+.menu li .sub-menu li a{
+    text-decoration: underline;
+    padding: 1vw;
+    border-radius: 15px;
+}
+
+.menu li .sub-menu li a:hover{
+    color: #fff;
+    background-color: #000000;
+    transition: 0.2s;
 }
 
 /* titulo da pagina */
@@ -688,9 +763,24 @@ and (max-width: 1024px){
         width: 100%;
     }
 
+    .vlibras{
+        display: none;
+    }
+
     /* header */
-    #logo{
+    .logo{
         font-size: 3vw;
+    }
+
+    .logo img{
+        width: 6vw;
+        height: 6vw;
+    }
+
+    /* nav */
+
+    .menu li .sub-menu{
+        top: 7.5vw;
     }
 
     /* conteudo */
@@ -714,7 +804,6 @@ and (max-width: 1024px){
     /* calculadora e resultado */
     .calculadora{
         width: 40%;
-
     }
 
     .resultado{
@@ -735,6 +824,11 @@ and (max-width: 1024px){
 
     .calculadora input[type="number"]{ 
         font-size: 1.4vw;
+    }
+
+    .box-radio-input, .box-select-input{
+        flex-wrap: wrap;
+        padding-top: 4.3vw;
     }
 
     .label-radio{
@@ -831,9 +925,17 @@ and (max-width: 500px){
         text-align: center;
     }
 
+    .vlibras{
+        display: none;
+    }
+
     /* header */
-    #logo{
+    .logo{
         font-size: 4.5vw;
+    }
+
+    .logo img{
+        display: none;
     }
 
     .burger-icon div{
@@ -854,6 +956,7 @@ and (max-width: 500px){
     }
 
     .burger-menu li{
+        background-image: none;
         background-color: #000;
         width: 100%;
         padding: 3% 0 3% 0;
@@ -939,17 +1042,17 @@ and (max-width: 500px){
 
     .box-radio-input, .box-select-input{
         flex-wrap: wrap;
-        padding-top: 4.3vh;
+        padding-top: 8.3vw;
     }
 
     .resultado-big{
         width: 70%;
-        height: 60vh;
+        height: 110vw;
     }
 
     .resultado-small{
         width: 70%;
-        height: 35vh;
+        height: 60vw;
     }
 
     #btn-calc, #btn-limp{
@@ -1008,16 +1111,16 @@ and (max-width: 500px){
     }
 
     .tbl-resultado tr td{
-        font-size: 3.5vw
+        font-size: 3vw;
     }
-    
+
     /* placeholder */
 
     /* Conteudo textual */
 
     .box-info{
-        width: 65%;
-        padding: 3vh;
+        width: 70%;
+        padding: 3vw;
     }
 
     th, td{
@@ -1055,12 +1158,16 @@ and (max-width: 500px){
     }
 
     .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
-        font-size: 3.1vw;
+        font-size: 3.5vw;
     }
 
     .social-icon{
         width: 3em;
         height: 3em;
+    }
+
+    .redes-sociais a{
+        margin: 1em;
     }
 
     .new-tab{

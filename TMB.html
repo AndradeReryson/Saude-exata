@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
+    <link rel="icon" href="IMGS/saude-exata-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <title> Saúde Exata - Calculadora de Metabolismo Basal</title>
 </head>
 <body>
@@ -27,11 +30,21 @@
     </div>
 
     <header class="topo">
-        <h1 id="logo"><a href="index.html" tabindex="9"> Saúde Exata </a> </h1>
+        <div id="container-logo" tabindex="-1">
+            <a class="logo" href="index.html" tabindex="-1"><img src="IMGS/saude-exata-logo.png" alt="Logo nas cores amarelo e laranja do site saude exata"></a>
+            <h1 class="logo"><a href="index.html" tabindex="9"> <part1>Saúde</part1><part2>Exata</part2> </a> </h1>
+        </div>
         <nav>
             <ul id="menu" class="menu" tabindex="-1">
                 <li><a class="text" href="index.html" tabindex="10">Início</a></li>
-                <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
+                <li><a id="btn-nav-calculadoras" class="text" tabindex="11">Calculadoras</a>
+                    <ul class="sub-menu">
+                        <li><a class="text" href="IMC.html">Peso Ideal</a></li>
+                        <li><a class="text" href="TMB.html">Taxa Metabólica Basal</a></li>
+                        <li><a class="text" href="BF.html">Gordura Corporal</a></li>
+                        <li><a class="text" href="Macros.html">Macronutrientes</a></li>
+                    </ul>
+                </li>
                 <li><a class="text" href="#" tabindex="12">Login</a></li>
             </ul>
             <div class="burger-icon" onclick="toggle_burger()">
@@ -42,10 +55,24 @@
         </nav>
     </header>
 
+    <!-- vlibras -->
+    <div class="vlibras">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+    
     <ul class="burger-menu invisible">
-        <li><a class="text" href="index.html" tabindex="10">Início</a></li>
-        <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
-        <li><a class="text" href="#" tabindex="12">Login</a></li>
+        <li><a class="text" href="index.html" tabindex="-1">Início</a></li>
+        <li><a class="text" href="#" tabindex="-1">Calculadoras</a></li>
+        <li><a class="text" href="#" tabindex="-1">Login</a></li>
     </ul>
 
     <div class="linha-titulo">
@@ -182,17 +209,22 @@
         <section class="mapa-site">
             <h2 class="text rodape-titulo"> Mapa do site </h2>
 
+            <h2 class="text rodape-sub-titulo">Site</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="index.html" tabindex="23">Pagina inicial</a></li>
+            </ul>
+            
             <h2 class="text rodape-sub-titulo">Calculadoras</h2>
             <ul class="lista-links">
-                <li><a class="text" href="IMC.html" tabindex="23">Calculadora IMC</a></li>
-                <li><a class="text" href="TMB.html" tabindex="24">Calculadora TMB</a></li>
-                <li><a class="text" href="BF.html" tabindex="25">Calculadora BF</a></li>
-                <li><a class="text" href="Macros.html" tabindex="26">Calculadora de Macros</a></li>
+                <li><a class="text" href="IMC.html" tabindex="24">Calculadora IMC</a></li>
+                <li><a class="text" href="TMB.html" tabindex="25">Calculadora TMB</a></li>
+                <li><a class="text" href="BF.html" tabindex="26">Calculadora BF</a></li>
+                <li><a class="text" href="Macros.html" tabindex="27">Calculadora de Macros</a></li>
             </ul>
 
             <h2 class="text rodape-sub-titulo">Profissionais de Saúde</h2>
             <ul class="lista-links">
-                <li><a class="text" href="Profissionais.html" tabindex="27">Lista de profissionais</a></li>
+                <li><a class="text" href="Profissionais.html" tabindex="28">Lista de profissionais</a></li>
             </ul>
         </section>
         <section class="social">
@@ -202,21 +234,21 @@
 
             <h2 class="text rodape-sub-titulo">Redes Sociais</h2>
             <ul class="redes-sociais">
-                <li><a href="#" tabindex="28"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
-                <li><a href="#" tabindex="29"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
-                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
-                <li><a href="#" tabindex="31"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
-                <li><a href="#" tabindex="32"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+                <li><a href="#" tabindex="29"><img class="social-icon" src="IMGS/icon-email.png" alt="icone do botão de email para contato"></a></li>
+                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-face.png" alt="icone do botão do facebook para contato"></a></li>
+                <li><a href="#" tabindex="31"><img class="social-icon" src="IMGS/icon-insta.png" alt="icone do botão do instagram para contato"></a></li>
+                <li><a href="#" tabindex="32"><img class="social-icon" src="IMGS/icon-twitter.png" alt="icone do botão do twitter para contato"></a></li>
+                <li><a href="#" tabindex="33"><img class="social-icon" src="IMGS/icon-whats.png" alt="icone do botão do whatsapp para contato"></a></li>
             </ul>
 
             <h2 class="text rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
             <ul class="lista-links">
-                <li><a class="text" tabindex="33">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="34">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="35">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="36">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="37">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="38">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="34">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="35">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="36">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="37">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="38">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="39">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
             </ul>
         </section>
     </footer>

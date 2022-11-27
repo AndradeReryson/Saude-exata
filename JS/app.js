@@ -1,8 +1,8 @@
 /* menu de hamburger para mobile */
-var burger_icon = document.querySelector('.burger-icon');
-var burger_menu = document.querySelector('.burger-menu'); 
+let burger_icon = document.querySelector('.burger-icon');
+let burger_menu = document.querySelector('.burger-menu'); 
 
-var burger_visible = false;
+let burger_visible = false;
 
 function toggle_burger(){
 
@@ -16,13 +16,59 @@ function toggle_burger(){
 
 }
 
-/*
-var sexo;
-var idade;
-var altura;
-var peso;
-*/
+/* sub-menu calculadoras */
 
+let btn_nav_calc = document.querySelector('#btn-nav-calculadoras')
+let sub_menu_visivel = false
+
+/* função pra esconder/mostrar o submenu */
+btn_nav_calc.addEventListener("click", function(){
+    if(sub_menu_visivel == false){
+        document.querySelector('.menu li .sub-menu').style.height = "170%"
+        sub_menu_visivel = true
+    } else {
+        document.querySelector('.menu li .sub-menu').style.height = "0%"
+        sub_menu_visivel = false
+    }
+});
+
+btn_nav_calc.addEventListener("keypress", function(x){
+    if(x.key == "Enter"){
+        btn_nav_calc.click();
+    }
+});
+
+
+/* fazendo os botões da barra de acessibilidade clicaveis com enter quando recebem foco */
+
+let contraste_on = document.querySelector('#btn-contraste-on')
+let contraste_off = document.querySelector('#btn-contraste-off')
+let font_mais = document.querySelector('#btn-font-plus')
+let font_menos = document.querySelector('#btn-font-minus')
+
+contraste_on.addEventListener("keypress", function(x){
+    if(x.key == "Enter"){
+        contraste_on.click();
+    }
+});
+
+contraste_off.addEventListener("keypress", function(x){
+    if(x.key == "Enter"){
+        contraste_off.click();
+    }
+});
+
+font_mais.addEventListener("keypress", function(x){
+    if(x.key == "Enter"){
+        font_mais.click();
+    }
+});
+
+font_menos.addEventListener("keypress", function(x){
+    if(x.key == "Enter"){
+        font_menos.click();
+    }
+});
 
 /* botões de aumentar/diminuir fonte */
 

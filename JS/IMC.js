@@ -56,7 +56,7 @@ function inputLimit(input, max){
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
         button.click();
-        document.querySelector('input[name="sexo"]:checked').focus(); /* focus volta pro botão de sexo*/
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'}); 
     }
 });
 
@@ -114,15 +114,7 @@ function calcularIMC(){
         document.querySelector('#imc_resultado').innerHTML = imc;
         document.querySelector('#imc_legenda').innerHTML = caption;
 
-        /* controlando o scroll
-
-        let element = document.querySelector('.conteudo');
-        let coord_x = element.getBoundingClientRect().left;
-        let coord_y = element.getBoundingClientRect().top;
-        console.log(coord_x, coord_y);
-
-        let  
-        */
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'});
 
     }
 

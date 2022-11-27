@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="IMGS/favicon.png" typ="image/x-icon">
+    <link rel="icon" href="IMGS/saude-exata-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <title> Saúde Exata - Calculadora de Macros </title>
 </head>
 <body>
@@ -27,11 +30,21 @@
     </div>
 
     <header class="topo">
-        <h1 id="logo"><a href="index.html" tabindex="9"> Saúde Exata </a> </h1>
+        <div id="container-logo" tabindex="-1">
+            <a class="logo" href="index.html" tabindex="-1"><img src="IMGS/saude-exata-logo.png" alt="Logo nas cores amarelo e laranja do site saude exata"></a>
+            <h1 class="logo"><a href="index.html" tabindex="9"> <part1>Saúde</part1><part2>Exata</part2> </a> </h1>
+        </div>
         <nav>
             <ul id="menu" class="menu" tabindex="-1">
                 <li><a class="text" href="index.html" tabindex="10">Início</a></li>
-                <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
+                <li><a id="btn-nav-calculadoras" class="text" tabindex="11">Calculadoras</a>
+                    <ul class="sub-menu">
+                        <li><a class="text" href="IMC.html">Peso Ideal</a></li>
+                        <li><a class="text" href="TMB.html">Taxa Metabólica Basal</a></li>
+                        <li><a class="text" href="BF.html">Gordura Corporal</a></li>
+                        <li><a class="text" href="Macros.html">Macronutrientes</a></li>
+                    </ul>
+                </li>
                 <li><a class="text" href="#" tabindex="12">Login</a></li>
             </ul>
             <div class="burger-icon" onclick="toggle_burger()">
@@ -42,10 +55,24 @@
         </nav>
     </header>
 
+    <!-- vlibras -->
+    <div class="vlibras">
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </div>
+    
     <ul class="burger-menu invisible">
-        <li><a class="text" href="index.html" tabindex="10">Início</a></li>
-        <li><a class="text" href="#" tabindex="11">Calculadoras</a></li>
-        <li><a class="text" href="#" tabindex="12">Login</a></li>
+        <li><a class="text" href="index.html" tabindex="-1">Início</a></li>
+        <li><a class="text" href="#" tabindex="-1">Calculadoras</a></li>
+        <li><a class="text" href="#" tabindex="-1">Login</a></li>
     </ul>
 
     <div class="linha-titulo">
@@ -91,7 +118,7 @@
 
             <div class="box-select-input">
                 <label class="label text" for="exercicios"> Frequência de exercícios* </label> 
-                <select class="text" name="slc-ex" id="exercicios" tabindex="18">
+                <select class="text" name="slc-ex" id="exercicios" tabindex="19">
                     <option class="text" value="1.2">Sedentário</option>
                     <option class="text" value="1.375" selected>Levemente Ativo</option>
                     <option class="text" value="1.55">Moderadamente Ativo</option>
@@ -102,7 +129,7 @@
 
             <div class="box-select-input">
                 <label class="label text" for="objetivo"> Objetivo* </label>
-                <select class="text" name="slc-obj" id="objetivo" tabindex="19">
+                <select class="text" name="slc-obj" id="objetivo" tabindex="20">
                     <option class="text" value="perder">Perder Peso</option>
                     <option class="text" value="manter">Manter Peso</option>
                     <option class="text" value="ganhar">Ganhar Peso</option>
@@ -111,14 +138,14 @@
             
             <div class="box-botoes">
                 <!-- <span type="reset" class="button" id="btn-limp" tabindex="11"> limpar </span> -->
-                <span class="button text" id="btn-calc" tabindex="18" onclick="calcularMacros()"> Calcular </span>
+                <span class="button text" id="btn-calc" tabindex="21" onclick="calcularMacros()"> Calcular </span>
             </div>
             
         </form> 
         <div class="resultado-big">
             <h2 class="titulo text"> Resultado </h2>
             <div class="placeholder">
-                <h2 class="ph_text text"> Calcule quanto você deve consumir de acordo com seu objetivo. Preencha os campos a esqueda =) </h2>
+                <h2 class="ph_text text"> Calcule quanto você deve consumir de acordo com seu objetivo. Preencha os campos a esquerda =) </h2>
             </div>
 
             <div class="msg-resultado  invisible">
@@ -179,26 +206,94 @@
 
     <section id="information" class="information">
         <article class="box-info">
-            <h2 class="titulo text" tabindex="19"> O que são macronutrientes? </h2>
+            <h2 class="titulo text" tabindex="22"> O que são macronutrientes? </h2>
             <p class="text-info text"> Os macronutrientes podem ser definidos como os elementos que fornecem grande parte da força e do vigor físico necessário para o nosso corpo se manter ativo. Por reporem as energias gastas durante o dia a dia, são considerados indispensáveis para uma vivência saudável. </p> 
             <p class="text-info text"> Responsáveis por fornecer 100% de nossa energia, sua ingestão diária é fundamental para a conquista de um corpo saudável, equilibrado e bem-disposto. O grupo dos macronutrientes é formado por 3 elementos: carboidratos, proteínas e lipídios (gordura). Cada um deles tem atuação importante em nosso organismo — e em nossa rotina. </p>
         </article>
 
         <article class="box-info">
-            <h2 class="titulo text" tabindex="19"> Tabela de macronutrientes </h2>
+            <h2 class="titulo text" tabindex="23"> Tabela de macronutrientes </h2>
             <table>
                 <legend></legend>
                 <tr>
-                    <th class="text"> </th>
-                    <th class="text"> </th>
-                    <th class="text"> </th>
+                    <th class="text">Alimento </th>
+                    <th class="text">Porção </th>
+                    <th class="text">Proteina</th>
+                    <th class="text">Carboidratos</th>
+                    <th class="text">Gordura</th>
                 </tr>
                 
+                <tr>
+                    <td colspan="5"><b>Frutas</b></td>
+                </tr>
+
+                <tr>
+                    <td>Maça</td><td>1 (unidade)</td><td>0.27g</td><td>14.36g</td><td>0.18g</td>
+                </tr>
+
+                <tr>
+                    <td>Banana</td><td>1 (unidade)</td><td>1.85g</td><td>38.85g</td><td>0.56g</td>
+                </tr>
+
+                <tr>
+                    <td>Uvas</td><td>250g</td><td>1.15g</td><td>28.96g</td><td>0.26g</td>
+                </tr>
+
+                <tr>
+                    <td>Laranja</td><td>1 (unidade)</td><td>0.79g</td><td>11.79g</td><td>0.23g</td>
+                </tr>
+
+                <tr>
+                    <td>Pera</td><td>1 (unidade)</td><td>0.54g</td><td>21.91g</td><td>0.17g</td>
+                </tr>
+
+                <tr>
+                    <td>Pêssego</td><td>1 (unidade)</td><td>1.2g</td><td>12.59g</td><td>0.33g</td>
+                </tr>
+
+                <tr>
+                    <td>Abacaxi</td><td>250g</td><td>0.84g</td><td>19.58g</td><td>0.19g</td>
+                </tr>
+
+                <tr>
+                    <td>Morangos</td><td>250g</td><td>1.11g</td><td>12.75g</td><td>0.5g</td>
+                </tr>
+
+                <tr>
+                    <td>Melancia</td><td>250g</td><td>0.93g</td><td>11.48g</td><td>0.23g</td>
+                </tr>
+
+                <tr><td colspan="5"><b>Vegetais</b></td></tr>
+                <tr><td>Brocolis</td><td>250g</td><td>2.57g</td><td>6.04g</td><td>0.34g</td></tr>
+                <tr><td>Cenoura</td><td>250g</td><td>1.19g</td><td>12.26g</td><td>0.31g</td></tr>
+                <tr><td>Pepino</td><td>118g</td><td>0.67g</td><td>2.45g</td><td>0.18g</td></tr>
+                <tr><td>Berinjela</td><td>250g</td><td>0.98g</td><td>5.88g</td><td>0.18g</td></tr>
+                <tr><td>Alface</td><td>250g</td><td>0.5g</td><td>1.63g</td><td>0.08g</td></tr>
+                <tr><td>Tomate</td><td>250g</td><td>1.58g</td><td>7.06g</td><td>0.36g</td></tr>
+
+                <tr><td colspan="5"><b>Proteina</b></td></tr>
+                <tr><td>Bife Bovino</td><td>56g</td><td>14.2g</td><td>0g</td><td>10.4g</td></tr>
+                <tr><td>Peito de frango</td><td>56g</td></td><td>16g</td><td>0g</td><td>1.84g</td></tr>
+                <tr><td>Tofu</td><td>118g</td><td>7.82g</td><td>2.72g</td><td>3.06g</td></tr>
+                <tr><td>Ovo</td><td>1(grande)</td><td>6.29g</td><td>0.38g</td><td>4.97g</td></tr>
+                <tr><td>Peixe</td><td>56g</td><td>9.96g</td><td>4.84g</td><td>8.24g</td></tr>
+                <tr><td>Bife Suíno</td><td>56g</td><td>15.82g</td><td>0g</td><td>8.26g</td></tr>
+                <tr><td>Camarão</td><td>56g</td><td>15.45g</td><td>0.69g</td><td>1.32g</td></tr>
+
+                <tr><td colspan="5"><b>Bebidas/Laticínios</b></td></tr>
+                <tr><td>Coca-Cola</td><td>1 lata</td><td>0g</td><td>39g</td><td>0g</td></tr>
+                <tr><td>Coca Diet</td><td>1 lata</td><td>0g</td><td>0g</td><td>0g</td></tr>
+                <tr><td>Leite (1%)</td><td>1 xícara</td><td>8.22g</td><td>12.18g</td><td>2.37g</td></tr>
+                <tr><td>Leite (2%)</td><td>1 xícara</td><td>8.05g</td><td>11.42g</td><td>4.81g</td></tr>
+                <tr><td>Leite (Interal)</td><td>1 xícara</td><td>7.86g</td><td>11.03g</td><td>7.93g</td></tr>
+                <tr><td>Suco de Laranja</td><td>1 xícara</td><td>1.74g</td><td>25.79g</td><td>0.5g</td></tr>
+                <tr><td>Iogurte</td><td>1 cup</td><td>12.86g</td><td>17.25g</td><td>3.8g</td></tr>
+
             </table>
         </article>
 
         <article class="box-info">
-            <h2 class="titulo text" tabindex="19"> Como é feito o calculo? </h2>
+            <h2 class="titulo text" tabindex="24"> Como é feito o calculo? </h2>
             <p class="text-info text"> </p>Utilizamos a equação de Mifflin-St Jeor para o calculo da TMB. Sua formula é uma das mais utilizadas para este calculo pois tem um resultado mais preciso quando comparado com outras formulas. Existem duas equações utilizadas, uma para homens e outra para mulheres: </p> 
             <p class="text-info text"> <b> Homens: (10 x Peso) + (6.25 x Altura) - (5 x idade) + 5 </b> </p>
             <p class="text-info text"> <b> Mulheres: (10 x Peso) + (6.25 x Altura) - (5 x idade) - 161 </b> </p>
@@ -247,9 +342,9 @@
             <ul class="lista">
                 <li class="text">1g de proteina = 4 calorias</li>
                 <li class="text">1g de carboidrato = 4 calorias</li>
-                <li class="text">1g de proteina = 9 calorias</li>
+                <li class="text">1g de gordura = 9 calorias</li>
             </ul>
-            <p class="text-info text"> Descobrimos a quantidade de calorias destinadas a proteina e gordura pela multiplicação destas pela quantidade de calorias por grama. Já o calculo dos carboidratos é: <b> quantidade de calorias diarias - (calorias de proteina + calorias de gordura)</p>
+            <p class="text-info text"> Descobrimos a quantidade de calorias destinadas a proteina e gordura pela multiplicação destas pela quantidade de calorias por grama. Já o calculo dos carboidratos é: <b> quantidade de calorias diarias - (calorias de proteina + calorias de gordura) </b></p>
         </article>
     </section>
 
@@ -257,41 +352,46 @@
         <section class="mapa-site">
             <h2 class="text rodape-titulo"> Mapa do site </h2>
 
+            <h2 class="text rodape-sub-titulo">Site</h2>
+            <ul class="lista-links">
+                <li><a class="text" href="index.html" tabindex="25">Pagina inicial</a></li>
+            </ul>
+
             <h2 class="text rodape-sub-titulo">Calculadoras</h2>
             <ul class="lista-links">
-                <li><a class="text" href="IMC.html" tabindex="22">Calculadora IMC</a></li>
-                <li><a class="text" href="TMB.html" tabindex="23">Calculadora TMB</a></li>
-                <li><a class="text" href="BF.html" tabindex="24">Calculadora BF</a></li>
-                <li><a class="text" href="Macros.html" tabindex="25">Calculadora de Macros</a></li>
+                <li><a class="text" href="IMC.html" tabindex="26">Calculadora IMC</a></li>
+                <li><a class="text" href="TMB.html" tabindex="27">Calculadora TMB</a></li>
+                <li><a class="text" href="BF.html" tabindex="28">Calculadora BF</a></li>
+                <li><a class="text" href="Macros.html" tabindex="29">Calculadora de Macros</a></li>
             </ul>
 
             <h2 class="text rodape-sub-titulo">Profissionais de Saúde</h2>
             <ul class="lista-links">
-                <li><a class="text" href="Profissionais.html" tabindex="26">Lista de profissionais</a></li>
+                <li><a class="text" href="Profissionais.html" tabindex="30">Lista de profissionais</a></li>
             </ul>
         </section>
         <section class="social">
             <h2 class="text rodape-titulo"> Informações </h2>
-            <h2 class="text rodape-sub-titulo">Quem somos</h2>
+            <h2 id="rodape-quem-somos" class="text rodape-sub-titulo">Quem somos</h2>
             <h3 class="text rodape-desc">Somos a equipe Saúde Exata, nossa missão é trazer a você um website que permita o calculo de indíces corporais para que você se mantenha sua saúde em dia! Tambem temos parcerias com profissionais de saúde qualificados e aptos a lhe auxiliar!</h3>
 
             <h2 class="text rodape-sub-titulo">Redes Sociais</h2>
             <ul class="redes-sociais">
-                <li><a href="#" tabindex="26"><img class="social-icon" src="IMGS/icon-email.png"></a></li>
-                <li><a href="#" tabindex="27"><img class="social-icon" src="IMGS/icon-face.png"></a></li>
-                <li><a href="#" tabindex="28"><img class="social-icon" src="IMGS/icon-insta.png"></a></li>
-                <li><a href="#" tabindex="29"><img class="social-icon" src="IMGS/icon-twitter.png"></a></li>
-                <li><a href="#" tabindex="30"><img class="social-icon" src="IMGS/icon-whats.png"></a></li>
+                <li><a href="#" tabindex="31"><img class="social-icon" src="IMGS/icon-email.png" alt="icone do botão de email para contato"></a></li>
+                <li><a href="#" tabindex="32"><img class="social-icon" src="IMGS/icon-face.png" alt="icone do botão do facebook para contato"></a></li>
+                <li><a href="#" tabindex="33"><img class="social-icon" src="IMGS/icon-insta.png" alt="icone do botão do instagram para contato"></a></li>
+                <li><a href="#" tabindex="34"><img class="social-icon" src="IMGS/icon-twitter.png" alt="icone do botão do twitter para contato"></a></li>
+                <li><a href="#" tabindex="35"><img class="social-icon" src="IMGS/icon-whats.png" alt="icone do botão do whatsapp para contato"></a></li>
             </ul>
 
             <h2 class="text rodape-sub-titulo">Desenvolvedores (1º DSM)</h2>
             <ul class="lista-links">
-                <li><a class="text" tabindex="31">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="32">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="33">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="34">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="35">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
-                <li><a class="text" tabindex="36">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg"></a></li>
+                <li><a class="text" tabindex="36">Guilherme Rodrigues <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="37">Gustavo Castro <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="38">Lucas Leite <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="39">Nathalia Simões <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="40">Reryson Andrade <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
+                <li><a class="text" tabindex="41">Ulisses Antonelli <img class="new-tab" src="IMGS/open-new-tab.svg" alt="icone representanto a abertura de uma nova janela"></a></li>
             </ul>
         </section>
     </footer>
