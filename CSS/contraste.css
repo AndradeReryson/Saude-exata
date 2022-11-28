@@ -423,7 +423,7 @@ h2.titulo-pagina{
     margin: 0;
 }
 
-.calculadora input[type="number"]{ 
+.calculadora input[type="text"]{ 
     display: inline-block;
     padding: 3% 6%;
     width: 70%;
@@ -846,7 +846,7 @@ and (max-width: 1024px){
         font-size: 1.4vw;
     }
 
-    .calculadora input[type="number"]{ 
+    .calculadora input[type="text"]{ 
         font-size: 1.4vw;
     }
 
@@ -963,6 +963,7 @@ and (max-width: 500px){
     }
 
     nav{
+        display: flex;
         justify-content: right;
     }
 
@@ -1109,7 +1110,7 @@ and (max-width: 500px){
         font-size: 3vw;
     }
 
-    .calculadora input[type="number"]{ 
+    .calculadora input[type="text"]{ 
         font-size: 3.5vw;
     }
 

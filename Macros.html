@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="IMGS/saude-exata-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
+    <!-- fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <!-- biblioteca -->
+    <!-- bibliotecas/plugins-->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title> Saúde Exata - Calculadora de Macros </title>
 </head>
 <body>
@@ -39,10 +44,10 @@
                 <li><a class="text" href="index.html" tabindex="10">Início</a></li>
                 <li><a id="btn-nav-calculadoras" class="text" tabindex="11">Calculadoras</a>
                     <ul class="sub-menu">
-                        <li><a class="text" href="IMC.html">Peso Ideal</a></li>
-                        <li><a class="text" href="TMB.html">Taxa Metabólica Basal</a></li>
-                        <li><a class="text" href="BF.html">Gordura Corporal</a></li>
-                        <li><a class="text" href="Macros.html">Macronutrientes</a></li>
+                        <li><a class="text" href="IMC.html" tabindex="-1">Peso Ideal</a></li>
+                        <li><a class="text" href="TMB.html" tabindex="-1">Taxa Metabólica Basal</a></li>
+                        <li><a class="text" href="BF.html" tabindex="-1">Gordura Corporal</a></li>
+                        <li><a class="text" href="Macros.html" tabindex="-1">Macronutrientes</a></li>
                     </ul>
                 </li>
                 <li><a class="text" href="#" tabindex="12">Login</a></li>
@@ -98,25 +103,25 @@
 
             <div class="box-num-input">
                 <label class="label text" for="idade"> Idade* </label> 
-                <input class="campo_num text" type="number" id="idade" name="txt_idade" tabindex="15" oninput="inputLimit(this, 3);" required> 
+                <input class="campo_num text" type="text" id="idade" name="txt_idade" tabindex="15" required> 
                 <h4 class="exemplo text"> Exemplo: 25 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="altura"> Altura(cm)* </label> 
-                <input class="campo_num text" type="number" id="altura" name="txt_altura" tabindex="16" oninput="inputLimit(this, 3)" required>
+                <input class="campo_num text" type="text" id="altura" name="txt_altura" tabindex="16" required>
                 <h4 class="exemplo text"> Exemplo: 175 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="peso"> Peso(Kg)* </label> 
-                <input class="campo_num text" type="number" id="peso" name="txt_peso" tabindex="17" oninput="inputLimit(this, 5)" required>
+                <input class="campo_num text" type="text" id="peso" name="txt_peso" tabindex="17" required>
                 <h4 class="exemplo text"> Exemplo: 70,5 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="refeicoes"> Nº de Refeições diárias* </label> 
-                <input class="campo_num text" type="number" id="refeicoes" name="txt_refeicoes" tabindex="18" oninput="inputLimit(this, 2)" required>
+                <input class="campo_num text" type="text" id="refeicoes" name="txt_refeicoes" tabindex="18" required>
             </div>
 
             <div class="box-select-input">

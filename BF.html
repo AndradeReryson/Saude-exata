@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="IMGS/saude-exata-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/style.css">
+    <!-- fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <!-- biblioteca-->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title> Saúde Exata - Calculadora de Gordura Corporal</title>
 </head>
 <body>
@@ -99,38 +102,38 @@
 
             <div class="box-num-input">
                 <label class="label text" for="idade"> Idade* </label> 
-                <input class="campo_num text" type="number" id="idade" name="txt_idade" tabindex="15" oninput="inputLimit(this, 3);" required> 
+                <input class="campo_num text" type="text" id="idade" name="txt_idade" tabindex="15"  required> 
                 <h4 class="exemplo text"> Exemplo: 25 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="altura"> Altura(cm)* </label> 
-                <input class="campo_num text" type="number" id="altura" name="txt_altura" tabindex="16" oninput="inputLimit(this, 3)" required>
-                <h4 class="exemplo text"> Exemplo: 175 </h4>
+                <input class="campo_num text" type="text" id="altura" name="txt_altura" tabindex="16" required>
+                <h4 class="exemplo text"> Exemplo: 1,75 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="peso"> Peso(Kg)* </label> 
-                <input class="campo_num text" type="number" id="peso" name="txt_peso" tabindex="17" oninput="inputLimit(this, 5)" required>
+                <input class="campo_num text" type="text" id="peso" name="txt_peso" tabindex="17" required>
                 <h4 class="exemplo text"> Exemplo: 70,5 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="pescoco"> Pescoço(cm)* </label> 
-                <input class="campo_num text" type="number" id="pescoco" name="txt_pescoco" tabindex="18" oninput="inputLimit(this, 2)" required>
-                <h4 class="exemplo text"> Exemplo: 34 </h4>
+                <input class="campo_num text" type="text" id="pescoco" name="txt_pescoco" tabindex="18" required>
+                <h4 class="exemplo text"> Exemplo: 34,5 </h4>
             </div>
 
             <div class="box-num-input">
                 <label class="label text" for="cintura"> Cintura(cm)* </label> 
-                <input class="campo_num text" type="number" id="cintura" name="txt_cintura" tabindex="19" oninput="inputLimit(this, 3)" required>
-                <h4 class="exemplo text"> Exemplo: 78 </h4>
+                <input class="campo_num text" type="text" id="cintura" name="txt_cintura" tabindex="19" required>
+                <h4 class="exemplo text"> Exemplo: 78,3 </h4>
             </div>
 
             <div class="box-num-input only-fem">
                 <label class="label text" for="quadril"> Quadril(cm)* </label> 
-                <input class="campo_num text" type="number" id="quadril" name="txt_quadril" tabindex="20" oninput="inputLimit(this, 5)" required>
-                <h4 class="exemplo text"> Exemplo: 84 </h4>
+                <input class="campo_num text" type="text" id="quadril" name="txt_quadril" tabindex="20" required>
+                <h4 class="exemplo text"> Exemplo: 84,0 </h4>
             </div>
 
             <div class="box-botoes">
@@ -150,7 +153,7 @@
                 <h2 class="text value_result" id="bf_porcent"> 12.5% </h2> 
                 <h4 class="text caption_result"> % ideal para sua idade </h4>
                 <h2 class="text value_result" id="bf_ideal"> 10.5% </h2> 
-                <h4 class="text caption_result"> Perda de gordura para chegar ao ideal</h4>
+                <h4 class="text caption_result" id="bf_perder_leg"> </h4>
                 <h2 class="text value_result" id="bf_perder"> 5.3kg </h2> 
                 <h4 class="text caption_result"> Sua categoria </h4>
                 <h2 class="text value_result" id="bf_categoria"> Atleta </h2> 

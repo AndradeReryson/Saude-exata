@@ -54,12 +54,6 @@ input_list[5].addEventListener("keypress", function(x){
     }
 }); 
 
-/* Limitando o tamanho do input*/
-function inputLimit(input, max){
-    if (input.value.length > max) input.value = input.value.slice(0, max);
-}
-
-
 /* Pressionar ENTER no botão "calcular" realiza o click */ 
 
 button.addEventListener("keypress", function(x){
@@ -97,6 +91,11 @@ function calcularTMB(){
         altura = parseFloat(altura)
         peso = parseFloat(peso)
         
+        altura = altura / 0.01
+        
+        console.log(altura)
+        console.log(peso)
+
         let ndc = 0
         let tmb = 0
 

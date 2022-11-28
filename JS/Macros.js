@@ -67,11 +67,6 @@ input_list[7].addEventListener("keypress", function(x){
     }
 });
 
-/* Limitando o tamanho do input*/
-function inputLimit(input, max){
-    if (input.value.length > max) input.value = input.value.slice(0, max);
-}
-
 /* Pressionar ENTER no botão "calcular" realiza o click */ 
 
 button.addEventListener("keypress", function(x){
@@ -109,6 +104,8 @@ function calcularMacros(){
         idade = parseInt(idade)
         altura = parseFloat(altura)
         peso = parseFloat(peso)
+        
+        altura = altura / 0.01
         
         let ndc = 0
         let tmb = 0

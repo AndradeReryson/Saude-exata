@@ -125,3 +125,13 @@ document.addEventListener('keydown', function(e){
 });
 
 /* Mascara para inputs */
+
+$(document).ready(function(){
+    $('#idade').mask('999')
+    $('#altura').mask('9.99')
+    $('#peso').mask('99.9')
+    $('#pescoco').mask('99.9')
+    $('#cintura').mask('99.9')
+    $('#quadril').mask('99.9')
+    $('#refeicoes').mask('99')
+})

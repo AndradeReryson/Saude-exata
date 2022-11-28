@@ -83,11 +83,6 @@ caixa_sexo.addEventListener('change',function(){
     }
 })
 
-/* Limitando o tamanho do input*/
-function inputLimit(input, max){
-    if (input.value.length > max) input.value = input.value.slice(0, max);
-}
-
 /* Pressionar ENTER no botão "calcular" realiza o click */ 
 
 button.addEventListener("keypress", function(x){
@@ -135,6 +130,15 @@ function calcularBF(){
         cintura = parseFloat(cintura)
         quadril = parseFloat(quadril)
 
+        altura = altura / 0.01
+
+        console.log(altura)
+        console.log(peso)
+        console.log(pescoco)
+        console.log(cintura)
+        console.log(quadril)
+        
+
         let bf_porcent = 0
         let bf_ideal = 0
         let bf_perder = 0
@@ -166,8 +170,15 @@ function calcularBF(){
             bf_perder = bf_perder * 0.01
             bf_perder = bf_perder.toFixed(1)
 
+            document.querySelector('#bf_perder_leg').innerHTML = 'Perda de gordura para chegar ao ideal'
+
+            if(bf_perder < 0){
+                bf_perder = Math.abs(bf_perder)
+                document.querySelector('#bf_perder_leg').innerHTML = 'Ganho de gordura para chegar ao ideal'
+            }
+
             if(bf_porcent<=5){
-                bf_categoria = "Apenas Essencial"
+                bf_categoria = "Déficit"
             } else if (bf_porcent>=6 && bf_porcent<=13){
                 bf_categoria = "Atleta"
             } else if (bf_porcent>=14 && bf_porcent<=17){
@@ -207,12 +218,15 @@ function calcularBF(){
             bf_perder = bf_perder * 0.01
             bf_perder = bf_perder.toFixed(1)
 
+            document.querySelector('#bf_perder_leg').innerHTML = 'Perda de gordura para chegar ao ideal'
+
             if(bf_perder < 0){
-                bf_perder = 0
+                bf_perder = Math.abs(bf_perder)
+                document.querySelector('#bf_perder_leg').innerHTML = 'Ganho de gordura para chegar ao ideal'
             }
 
             if(bf_porcent<=13){
-                bf_categoria = "Gordura Essencial"
+                bf_categoria = "Déficit"
             } else if (bf_porcent>=14 && bf_porcent<21){
                 bf_categoria = "Atleta"
             } else if (bf_porcent>=21 && bf_porcent<25){

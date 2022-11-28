@@ -46,12 +46,6 @@ input_list[4].addEventListener("keypress", function(x){
     }
 }); 
 
-/* Limitando o tamanho do input*/
-function inputLimit(input, max){
-    if (input.value.length > max) input.value = input.value.slice(0, max);
-}
-
-
 /* Pressionar ENTER no botão "calcular" realiza o click */ 
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
@@ -82,7 +76,7 @@ function calcularIMC(){
 
         altura = parseFloat(altura)
         peso = parseFloat(peso)
-
+        
         var imc = peso / (altura**2);
         imc = imc.toFixed(2);
         var caption = "";
