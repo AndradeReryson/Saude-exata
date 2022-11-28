@@ -65,7 +65,7 @@ function inputLimit(input, max){
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
         button.click();
-        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'}); 
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'}); 
     }
 });
 
@@ -117,7 +117,7 @@ function calcularTMB(){
         document.querySelector('#tmb_resultado').innerHTML = tmb;
         document.querySelector('#ndc_resultado').innerHTML = ndc;
 
-        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'});
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'});
 
     }
 

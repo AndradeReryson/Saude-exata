@@ -210,6 +210,13 @@ h2.titulo-pagina{
     margin: 0;
 }
 
+/* Menu burger para mobile */
+
+.burger-menu, .burger-icon{
+    display: none;
+}
+
+
 /* Calculadora e Resultado */
 
 .conteudo{
@@ -606,9 +613,17 @@ ul.lista li, ul.lista{
 
 table{
     align-self: center;
-    width: 85%;
+    table-layout: fixed;
     background-color: #000;
     margin: 0 0 2% 0;
+}
+
+table.tbl-small{
+    width: 50%;
+}
+
+table.tbl-big{
+    width: 85%;
 }
 
 table caption{
@@ -617,8 +632,17 @@ table caption{
 }
 
 th, td{
+    overflow-wrap: break-word;
     padding: 0.5vw;
-    font-size: 1.5vw;
+    font-size: 80%;
+}
+
+th.th-small{
+    width: 10%;
+}
+
+th.th-medium{
+    width: 25%;
 }
 
 table, th, td{
@@ -871,7 +895,7 @@ and (max-width: 1024px){
 
     th, td{
         padding: 0.8vw;
-        font-size: 1.8vw;
+        /*font-size: 1.8vw;*/
     }
 
     .text-info{
@@ -938,6 +962,14 @@ and (max-width: 500px){
         display: none;
     }
 
+    nav{
+        justify-content: right;
+    }
+
+    .burger-menu, .burger-icon{
+        display: block;
+    }
+
     .burger-icon div{
         width: 6vw;
         height: 1vw;
@@ -949,26 +981,32 @@ and (max-width: 500px){
         list-style: none;
         position: absolute;
         margin: 0;
+        height: 0;
+        overflow: hidden;
         padding: 0;
         width: 100%;
-        text-align: center;
+        text-align: right;
+        transition: 0.9s;
         z-index: 3;
+        background-color:rgba(0, 0, 0, 0.5)
     }
 
     .burger-menu li{
-        background-image: none;
-        background-color: #000;
-        width: 100%;
-        padding: 3% 0 3% 0;
-        border-top: 0.5px solid #fff;
+        padding: 5% 0 5% 0;
     }
 
     .burger-menu a{
+        background-image: none;
+        background-color: #000;
         text-decoration: none;
         font-family: helvetica, sans-serif;
-        font-size: 3vw;
+        font-size: 4vw;
+        padding: 3vw;
+        border-radius: 1em;
+        border: 1px solid #fff;
         color: yellow;
         font-weight: bold;
+        margin-right: 1em;
     }
 
     .burger-menu a:visited, .burger-menu a:active{
@@ -1123,17 +1161,20 @@ and (max-width: 500px){
         padding: 3vw;
     }
 
+    table.tbl-small, table.tbl-big{
+        width: 90%;
+    }
+
+    th.th-small, th.th-medium{
+        width: auto;
+    }
+
     th, td{
-        padding: 0.8vw;
-        font-size: 3.5vw;
+        padding: 0.7vw;
     }
 
     .text-info{
         font-size: 3.5vw;
-    }
-
-    .column-reduce{
-        display: none;
     }
 
     ol li{

@@ -7,10 +7,12 @@ let burger_visible = false;
 function toggle_burger(){
 
     if (burger_visible == false){
-        burger_menu.classList.remove('invisible');
+        burger_menu.style.height = "100%"
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden' /* trava o scroll */
         burger_visible = true;
     } else {
-        burger_menu.classList.add('invisible');
+        burger_menu.style.height = "0"
+        document.getElementsByTagName('body')[0].style.overflow = 'visible' /* destrava o scroll */
         burger_visible = false;
     }
 
@@ -21,7 +23,7 @@ function toggle_burger(){
 let btn_nav_calc = document.querySelector('#btn-nav-calculadoras')
 let sub_menu_visivel = false
 
-/* função pra esconder/mostrar o submenu */
+/* função pra esconder/mostrar o submenu "calculadoras "*/
 btn_nav_calc.addEventListener("click", function(){
     if(sub_menu_visivel == false){
         document.querySelector('.menu li .sub-menu').style.height = "170%"
@@ -34,13 +36,12 @@ btn_nav_calc.addEventListener("click", function(){
 
 btn_nav_calc.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
-        btn_nav_calc.click();
+        btn_nav_calc.click(); /* navegação com tab: quando apertar enter efetuar o click */
     }
 });
 
 
 /* fazendo os botões da barra de acessibilidade clicaveis com enter quando recebem foco */
-
 let contraste_on = document.querySelector('#btn-contraste-on')
 let contraste_off = document.querySelector('#btn-contraste-off')
 let font_mais = document.querySelector('#btn-font-plus')
@@ -122,3 +123,5 @@ document.addEventListener('keydown', function(e){
         document.querySelector('#rodape').focus();
     }
 });
+
+/* Mascara para inputs */

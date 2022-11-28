@@ -56,7 +56,7 @@ function inputLimit(input, max){
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
         button.click();
-        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'}); 
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'}); 
     }
 });
 
@@ -114,7 +114,7 @@ function calcularIMC(){
         document.querySelector('#imc_resultado').innerHTML = imc;
         document.querySelector('#imc_legenda').innerHTML = caption;
 
-        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'});
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'});
 
     }
 

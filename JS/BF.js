@@ -93,7 +93,7 @@ function inputLimit(input, max){
 button.addEventListener("keypress", function(x){
     if(x.key == "Enter"){
         button.click()
-        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'center'})/* leva a tela ao resultado*/
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'})/* leva a tela ao resultado*/
     }
 });
 
@@ -230,7 +230,7 @@ function calcularBF(){
         document.querySelector('#bf_perder').innerHTML = bf_perder+"Kg";
         document.querySelector('#bf_categoria').innerHTML = bf_categoria;
 
-        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'top'});
+        document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'});
 
     }
 
