@@ -964,11 +964,14 @@ and (max-width: 500px){
 
     nav{
         display: flex;
-        justify-content: right;
     }
 
     .burger-menu, .burger-icon{
         display: block;
+    }
+
+    .burger-icon{
+        align-self: flex-end;
     }
 
     .burger-icon div{
