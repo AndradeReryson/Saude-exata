@@ -944,14 +944,16 @@ and (max-width: 500px){
 
     nav{
         display: flex;
-    }
-
-    .burger-menu, .burger-icon{
-        display: block;
+        justify-content: end;
+        align-items: center;
     }
 
     .burger-icon{
         align-self: flex-end;
+    }
+
+    .burger-menu, .burger-icon{
+        display: block;
     }
     
     .burger-icon div{
