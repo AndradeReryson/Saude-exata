@@ -121,6 +121,14 @@ document.addEventListener('keydown', function(e){
         document.querySelector('#conteudo').focus();
     } else if (e.altKey && e.code == 'Digit3') {
         document.querySelector('#rodape').focus();
+    } else if (e.altKey && e.code == 'Digit9') {
+        contraste_on.click()
+    } else if (e.altKey && e.code == 'Digit0') {
+        contraste_off.click()
+    } else if (e.altKey && e.code == 'Minus') {
+        font_menos.click()
+    } else if (e.altKey && e.code == 'Equal') {
+        font_mais.click()
     }
 });
 
