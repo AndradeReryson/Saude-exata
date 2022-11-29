@@ -2,6 +2,7 @@
 
 html, body{
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     font-size: 1.3vw;
@@ -315,6 +316,7 @@ h2.titulo-pagina{
     transition: 0.2s;
     outline: 3px solid orangered;
 }
+
 /* Calculadora e resultado*/
 
 .calculadora, .resultado-big, .resultado-small{
@@ -709,6 +711,15 @@ table, th, td{
     text-decoration: underline;
 }
 
+#QR-Title{
+    margin-top: 2vw;    
+}
+
+#QR{
+    width: 10vw;
+    height: 10vw;
+}
+
 .rodape-desc{
     color: #fff;
     font-size: 1vw;
@@ -923,7 +934,10 @@ and (max-width: 1024px){
     .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
         font-size: 1.8vw;
     }
-    
+
+    #QR, #QR-Title{
+        display: none;
+    }
 
 }
 
@@ -1068,6 +1082,11 @@ and (max-width: 500px){
         font-size: 6.5vw;
         width: 40vw;
         height: 40vw;
+    }
+
+    .card-ball:focus{
+        outline: none;
+        border: 3px solid orangered;
     }
 
     /* calculadoras*/
@@ -1218,6 +1237,10 @@ and (max-width: 500px){
     .new-tab{
         width: 2vw;
         height: 2vw;
+    }
+
+    #QR, #QR-Title{
+        display: none;
     }
 
     /* javascript */

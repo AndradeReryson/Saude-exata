@@ -26,7 +26,7 @@ let sub_menu_visivel = false
 /* função pra esconder/mostrar o submenu "calculadoras "*/
 btn_nav_calc.addEventListener("click", function(){
     if(sub_menu_visivel == false){
-        document.querySelector('.menu li .sub-menu').style.height = "170%"
+        document.querySelector('.menu li .sub-menu').style.height = "175%"
         sub_menu_visivel = true
     } else {
         document.querySelector('.menu li .sub-menu').style.height = "0%"
@@ -112,7 +112,7 @@ function decreaseFont(){
     }
 }
 
-/* Atalhos */
+/* Atalhos de teclado */
 
 document.addEventListener('keydown', function(e){
     if(e.altKey && e.code == 'Digit1') {
