@@ -964,8 +964,8 @@ and (max-width: 500px){
 
     nav{
         display: flex;
-        justify-content: end;
-        align-items: center;
+        justify-content: right;
+        width: 48%;
     }
 
     .burger-icon{
