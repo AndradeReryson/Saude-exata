@@ -941,9 +941,186 @@ and (max-width: 1024px){
 
 }
 
-/* telas em portrait até 500px */
+/* mobile de até 500px em landscape*/
 @media screen 
-and (max-width: 500px){
+and (max-width: 500px)
+and (orientation:landscape){
+
+    html, body{
+        font-size: 2vw;
+    }
+
+    /* Acessibilidade */
+    .barra_acessibilidade{
+        font-size: 2vh;
+        
+    }
+
+    .barra_acessibilidade div:nth-child(1){
+        display: none;
+        width: 40%;
+    }
+
+    .barra_acessibilidade div:nth-child(2){
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Acessibilidade */
+    .barra_acessibilidade div:nth-child(1){
+        display: none;
+        width: 40%;
+    }
+
+    .barra_acessibilidade div:nth-child(2){
+        width: 100%;
+    }
+
+    .vlibras{
+        display: none;
+    }
+
+    /* header */
+    .logo{
+        font-size: 3vw;
+    }
+
+    .logo img{
+        width: 6vw;
+        height: 6vw;
+    }
+
+    /* nav */
+
+    .menu li .sub-menu{
+        top: 7.5vw;
+    }
+    /* conteudo */
+
+    /* pagina inicial*/
+
+    .apresentacao{
+        height: 80%;
+        justify-content: center;
+    }
+
+    .quem-somos{
+        width: 50%;
+        margin: 1%;
+    }
+
+    .card-ball{
+        opacity: 1;
+    }
+
+    .card-ball:focus{
+        outline: none;
+        border: 3px solid orangered;
+    }
+
+    /* calculadora e resultado */
+    .calculadora{
+        width: 40%;
+
+    }
+
+    .resultado{
+        width: 40%;
+    }
+
+    #btn-calc, #btn-limp{
+        font-size: 1.7vw;
+    }
+
+    .label{
+        font-size: 1.7vw;
+    }
+
+    .exemplo{
+        font-size: 1.4vw;
+    }
+
+    .calculadora input[type="text"]{ 
+        font-size: 1.4vw;
+    }
+
+    .box-radio-input, .box-select-input{
+        flex-wrap: wrap;
+        padding-top: 4.3vw;
+    }
+
+    .label-radio{
+        font-size: 1.4vw;
+    }
+
+    input[type="radio"]:focus + .label-radio, .button:focus{
+        outline: none;
+    }
+    
+    input[type="radio"]:active + .label-radio, .button:active{
+        outline: none;
+    }
+
+    select, option{
+        font-size: 1.6vw;
+    }
+
+    /* resultado */
+
+    h2.titulo{
+        font-size: 2.5vw;
+    }
+
+    .value_result{
+        font-size: 8vw;
+    }
+
+    .caption_result{
+        font-size: 1.7vw;
+    }
+
+    /* placeholder */
+
+    /* conteudo textual */
+
+    .box-info{
+        width: 85%;
+    }
+
+    th, td{
+        padding: 0.8vw;
+        /*font-size: 1.8vw;*/
+    }
+
+    .text-info{
+        font-size: 1.8vw;
+    }
+
+    ol li{
+        font-size: 1.6vw;
+    }
+
+    ul.lista li, ul.lista{
+        font-size: 2.2vw;
+        margin: 0;
+    }
+    
+    /* footer */
+
+    .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
+        font-size: 1.8vw;
+    }
+
+        
+    #QR, #QR-Title{
+        display: none;
+    }
+}
+
+/* mobile em portrait até 500px */
+@media screen 
+and (max-width: 500px)
+and (orientation:portrait){
     html, body{
         font-size: 3vw;
     }

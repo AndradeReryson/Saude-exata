@@ -137,9 +137,39 @@ document.addEventListener('keydown', function(e){
 $(document).ready(function(){
     $('#idade').mask('999')
     $('#altura').mask('9.99')
-    $('#peso').mask('99.9')
-    $('#pescoco').mask('99.9')
-    $('#cintura').mask('99.9')
-    $('#quadril').mask('99.9')
+    $('#peso').maskWeight({
+        integerDigits: 3,
+        decimalDigits: 2,
+        decimalMark: '.'
+    })
+    $('#pescoco').maskWeight({
+        integerDigits: 3,
+        decimalDigits: 2,
+        decimalMark: '.'
+    })
+    $('#cintura').maskWeight({
+        integerDigits: 3,
+        decimalDigits: 2,
+        decimalMark: '.'
+    })
+    $('#quadril').maskWeight({
+        integerDigits: 3,
+        decimalDigits: 2,
+        decimalMark: '.'
+    })
     $('#refeicoes').mask('99')
 })
+
+/*
+$('#peso').on('input',function(){
+    let tamanho = $('#peso').val()
+    console.log(tamanho)
+    console.log(tamanho.length)
+    if(tamanho.length === 6){
+        $('#peso').unmask()
+    } else {
+        
+    }
+})
+*/
+
