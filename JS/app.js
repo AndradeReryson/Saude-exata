@@ -143,26 +143,48 @@ document.addEventListener('keydown', function(e){
 $(document).ready(function(){
     $('#idade').mask('999')
     $('#altura').mask('9.99')
-    $('#peso').maskWeight({
-        integerDigits: 3,
-        decimalDigits: 2,
-        decimalMark: '.'
-    })
-    $('#pescoco').maskWeight({
-        integerDigits: 3,
-        decimalDigits: 2,
-        decimalMark: '.'
-    })
-    $('#cintura').maskWeight({
-        integerDigits: 3,
-        decimalDigits: 2,
-        decimalMark: '.'
-    })
-    $('#quadril').maskWeight({
-        integerDigits: 3,
-        decimalDigits: 2,
-        decimalMark: '.'
-    })
+    
+    // mascara pra peso
+    var options =  {
+        onKeyPress: function(peso, e, field, options) {
+            var masks = ['00.000', '000.00'];
+            var mask = (peso.length==6) ? masks[1] : masks[0];
+            $('#peso').mask(mask, options);
+        }
+    };
+    $('#peso').mask('00.000', options);
+
+
+    // mascara pra pescoco
+    var options =  {
+        onKeyPress: function(peso, e, field, options) {
+            var masks = ['00.000', '000.00'];
+            var mask = (peso.length==6) ? masks[1] : masks[0];
+            $('#pescoco').mask(mask, options);
+        }
+    };
+    $('#pescoco').mask('00.000', options);
+
+    // mascara pra cintura
+    var options =  {
+        onKeyPress: function(peso, e, field, options) {
+            var masks = ['00.000', '000.00'];
+            var mask = (peso.length==6) ? masks[1] : masks[0];
+            $('#cintura').mask(mask, options);
+        }
+    };
+    $('#cintura').mask('00.000', options);
+
+    // mascara pra quadril
+    var options =  {
+        onKeyPress: function(peso, e, field, options) {
+            var masks = ['00.000', '000.00'];
+            var mask = (peso.length==6) ? masks[1] : masks[0];
+            $('#quadril').mask(mask, options);
+        }
+    };
+    $('#quadril').mask('00.000', options);
+
     $('#refeicoes').mask('99')
 })
 

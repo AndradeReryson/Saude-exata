@@ -13,7 +13,6 @@
     <!-- biblioteca -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="JS/jQuery.weightMask.min.js"></script>
     <title> Saúde Exata - Calculadora de Metabolismo Basal</title>
 </head>
 <body>
@@ -133,6 +132,11 @@
             
             <div class="box-botoes">
                 <!-- <span type="reset" class="button" id="btn-limp" tabindex="11"> limpar </span> -->
+                <div>
+                    <span class="button text" id="btn-limpar" tabindex="19" title="limpar dados"><img src="IMGS/icon-limpar.png" alt="icone de uma borracha que apaga os campos anteriormente salvos"></span>
+
+                    <span class="button text" id="btn-salvar" tabindex="19" title="salvar dados"><img src="IMGS/icon-save.png" alt="icone de um disquete que salva os campos preenchidos"></span>
+                </div>
                 <span class="button text" id="btn-calc" tabindex="19" onclick="calcularTMB()"> Calcular </span>
             </div>
             
@@ -151,6 +155,11 @@
             </div>
         </div>
     </main>
+
+    <!-- modal - mensagem que desce do topo da tela parecendo alert  -->
+    <div id="modal-box-1" class="modal-box">
+        <p id="modal_text" class="text"></p>
+    </div>
 
     <section id="information" class="information">
         <!-- https://www.inchcalculator.com/mifflin-st-jeor-calculator/ -->
@@ -266,5 +275,6 @@
 </body>
 <script src="JS/app.js"></script>
 <script src="JS/TMB.js"></script>
+<script src="JS/salvar_medidas.js"></script>
 <script src="JS/contraste.js"></script>
 </html>
