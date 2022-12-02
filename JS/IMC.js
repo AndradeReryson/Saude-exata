@@ -85,24 +85,39 @@ function calcularIMC(){
         //const peso_masculino = [18.5, 25, 30, 35, 40]
         //const peso_feminino = []
 
-        if (imc < 18.5){
-            caption = "Abaixo do peso";
-            imagem.src = "IMGS/abaixopeso.svg";
-        } else if (imc >= 18.5 && imc <= 24.9) {
-            caption = "Peso Ideal";
-            imagem.src = "IMGS/normal.svg";
-        } else if (imc >= 25 && imc <= 29.9) {
-            caption = "Sobrepeso";
-            imagem.src = "IMGS/sobrepeso.svg";
-        } else if (imc >= 30 && imc <= 34.9) {
-            caption = "Obesidade Grau 1";
-            imagem.src = "IMGS/obesidade-1.svg";
-        } else if (imc >= 35 && imc <= 39.9) {
-            caption = "Obesidade Grau 2";
-            imagem.src = "IMGS/obesidade-2.svg";
-        } else if (imc >= 40) {
-            caption = "Obesidade Grau 3";
-            imagem.src = "IMGS/obesidade-3.svg";
+        if(idade > 18){
+            if (imc < 18.5){
+                caption = "Abaixo do peso";
+                imagem.src = "IMGS/abaixopeso.svg";
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                caption = "Peso Ideal";
+                imagem.src = "IMGS/normal.svg";
+            } else if (imc >= 25 && imc <= 29.9) {
+                caption = "Sobrepeso";
+                imagem.src = "IMGS/sobrepeso.svg";
+            } else if (imc >= 30 && imc <= 34.9) {
+                caption = "Obesidade Grau 1";
+                imagem.src = "IMGS/obesidade-1.svg";
+            } else if (imc >= 35 && imc <= 39.9) {
+                caption = "Obesidade Grau 2";
+                imagem.src = "IMGS/obesidade-2.svg";
+            } else if (imc >= 40) {
+                caption = "Obesidade Grau 3";
+                imagem.src = "IMGS/obesidade-3.svg";
+            }
+        } else {
+            if (imc < 15.1){
+                caption = "Abaixo do peso";
+                imagem.src = "IMGS/abaixopeso.svg";
+            } else if (imc >= 15.1 && imc <= 22) {
+                caption = "Peso Ideal";
+                imagem.src = "IMGS/normal.svg";
+            } else if (imc >= 22.1 && imc <= 25.6) {
+                caption = "Sobrepeso";
+                imagem.src = "IMGS/sobrepeso.svg";
+            } else if (imc > 25.6) {
+                caption = "Obesidade";
+            }
         }
 
         document.querySelector('#imc_resultado').innerHTML = imc;

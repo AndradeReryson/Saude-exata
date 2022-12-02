@@ -14,7 +14,7 @@ html, body{
 .barra_acessibilidade{
     display: flex;
     width: 100%;
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     background-color: #000;
 }
 
@@ -205,7 +205,7 @@ nav{
 
 h2.titulo-pagina{
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     color: #fff;
     margin: 0;
@@ -224,7 +224,7 @@ h2.titulo-pagina{
     align-self: center;
     display: flex;
     justify-content: center;
-    padding: 0 0 2% 0;
+    padding: 0;
     position: relative;
     /* outline: 2px solid white; */
     background-color: #000;
@@ -300,7 +300,7 @@ h2.titulo-pagina{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: bold;
     color: yellow;
 }
@@ -358,14 +358,14 @@ h2.titulo-pagina{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10% 0 3% 0 ;
+    padding: 2vw 0 2% 0 ;
 }
 
 .box-radio-input{
     /*border: 2px white solid;*/
     position: relative;
     display: flex;
-    padding: 2.7vw 0 5% 0;
+    padding: 2vw 0 2% 0;
     justify-content: center;
     /**/
     flex-wrap: wrap;
@@ -375,7 +375,7 @@ h2.titulo-pagina{
     /*border: 2px white solid;*/
     position: relative;
     display: flex;
-    padding: 2.7vw 0 5% 0;
+    padding: 2vw 0 2% 0;
     justify-content: center;
     /**/
     flex-wrap: wrap;
@@ -412,12 +412,12 @@ h2.titulo-pagina{
     position: absolute;
     top: 8%;
     left: 8%;
-    font-size: 1.1vw;
+    font-size: 0.9vw;
     font-weight: bold;
 }
 
 .exemplo{
-    font-size: 1vw;
+    font-size: 0.8vw;
     opacity: 0.5;
 }
 
@@ -427,22 +427,22 @@ h2.titulo-pagina{
 
 .calculadora input[type="text"]{ 
     display: inline-block;
-    padding: 3% 6%;
+    padding: 2% 4%;
     width: 70%;
     text-align: center;
     border-radius: 1.3vw;
     border: none;
     font-family: helvetica, sans-serif;
-    font-size: 1.1vw;
+    font-size: 0.9vw;
 }
 
 select{
-    padding: 3% 6%;
+    padding: 2% 4%;
     width: 70%;
     border-radius: 1.3vw;
     border: none;
     font-family: helvetica, sans-serif;
-    font-size: 1.1vw;
+    font-size: 0.9vw;
 }
 
 input[type="radio"]{
@@ -455,8 +455,8 @@ input[type="radio"]{
     color: #fff;
     border: 2px #fff solid;
     border-radius: 10px;
-    padding: 3% 8%; 
-    font-size: 1.1vw;
+    padding: 3% 6%; 
+    font-size: 0.9vw;
     font-weight: bold;
     margin: 3% 1% 1% 1%;
 }
@@ -489,9 +489,9 @@ input[type="radio"]:checked + .label-radio::before{
 
 h2.titulo{
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
-    margin: 0 0 5% 0;
+    margin: 0 0 3% 0;
 }
 
 .msg-resultado{
@@ -504,28 +504,29 @@ h2.titulo{
 
 .value_result{
     text-align: center;
-    font-size: 7vw;
+    font-size: 5vw;
     margin: 0;
-    padding: 0 0 0.3em 0;
+    padding: 0 0 0.2em 0;
 }
 
 .caption_result{
-    font-size: 1.5vw;
+    text-align: center;
+    font-size: 1.2vw;
     margin: 0;
 }
 
 #img_imc{
     position: absolute;
-    bottom: 2%;
+    bottom: 3%;
     margin: 6% 0 0 0;
     /*width: 12vw;*/
     min-height: 30%;
-    height: 55%;
+    height: 50%;
     fill: white;
 }
 
 .tbl-resultado{
-    width: 70%;
+    width: 80%;
     background-color: transparent;
 }
 
@@ -534,7 +535,7 @@ h2.titulo{
 }
 
 .tbl-resultado tr td{
-    font-size: 1.5vw
+    font-size: 1.2vw;
 }
 
 .tbl-resultado td.td-result{
@@ -555,7 +556,7 @@ h2.titulo{
 .placeholder h2{
     width: 75%;
     text-align: center;
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 
@@ -565,7 +566,7 @@ h2.titulo{
     align-self: center;
     display: flex;
     flex-direction: column;
-    padding: 3% 0 3% 0;
+    padding: 2% 0 2% 0;
     align-items: center;
     position: relative;
     font-family: helvetica;
@@ -595,11 +596,11 @@ h2.titulo{
 }
 
 .text-info{
-    font-size: 1.5vw;
+    font-size: 1.4vw;
 }
 
 ol li{
-    font-size: 1.3vw;
+    font-size: 1vw;
 }
 
 ul.lista{
@@ -607,7 +608,7 @@ ul.lista{
 }
 
 ul.lista li, ul.lista{
-    font-size: 1.6vw;
+    font-size: 1.4vw;
     margin: 0;
 }
 
@@ -798,10 +799,6 @@ and (max-width: 1024px){
         width: 100%;
     }
 
-    .vlibras{
-        display: none;
-    }
-
     /* header */
     .logo{
         font-size: 3vw;
@@ -851,11 +848,11 @@ and (max-width: 1024px){
     }
 
     #btn-calc, #btn-limp{
-        font-size: 1.7vw;
+        font-size: 1.4vw;
     }
 
     .label{
-        font-size: 1.7vw;
+        font-size: 1.4vw;
     }
 
     .exemplo{
@@ -866,9 +863,10 @@ and (max-width: 1024px){
         font-size: 1.4vw;
     }
 
-    .box-radio-input, .box-select-input{
-        flex-wrap: wrap;
-        padding-top: 4.3vw;
+    .box-num-input,
+    .box-radio-input, 
+    .box-select-input{
+        padding-top: 3.3vw;
     }
 
     .label-radio{
@@ -884,7 +882,7 @@ and (max-width: 1024px){
     }
 
     select, option{
-        font-size: 1.6vw;
+        font-size: 1.4vw;
     }
 
     /* resultado */
@@ -893,12 +891,17 @@ and (max-width: 1024px){
         font-size: 2.5vw;
     }
 
+    h2.ph_text{
+        font-size: 2.5vw;
+    }
+
     .value_result{
-        font-size: 8vw;
+        padding: 0 0 0.5em 0;
+        font-size: 6vw;
     }
 
     .caption_result{
-        font-size: 1.7vw;
+        font-size: 2vw;
     }
 
     /* placeholder */
@@ -931,7 +934,7 @@ and (max-width: 1024px){
     /* footer */
 
     .rodape p{
-        font-size: 2vw;
+        font-size: 1.8vw;
     }
 
     /* footer */
@@ -966,10 +969,6 @@ and (max-width: 500px){
     .barra_acessibilidade div:nth-child(2){
         width: 100%;
         text-align: center;
-    }
-
-    .vlibras{
-        display: none;
     }
 
     /* header */
@@ -1106,9 +1105,10 @@ and (max-width: 500px){
         width: 70%;
     }
 
-    .box-radio-input, .box-select-input{
-        flex-wrap: wrap;
-        padding-top: 8.3vw;
+    .box-num-input,
+    .box-radio-input, 
+    .box-select-input{
+        padding-top: 8vw;
     }
 
     .resultado-big{
@@ -1138,7 +1138,7 @@ and (max-width: 500px){
     }
 
     .calculadora input[type="text"]{ 
-        font-size: 3.5vw;
+        font-size: 3.2vw;
     }
 
     .label-radio{
@@ -1169,15 +1169,15 @@ and (max-width: 500px){
     }
 
     .caption_result{
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     h2.ph_text{
-        font-size: 4.5vw;
+        font-size: 5vw;
     }
 
     .tbl-resultado tr td{
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     /* placeholder */

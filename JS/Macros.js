@@ -129,22 +129,26 @@ function calcularMacros(){
         let gordura = Math.round((peso*0.7)*9)
         let carboidratos = Math.round(ndc-(proteina+gordura))
     
+        let proteina_gramas = Math.round(peso*2)
+        let gordura_gramas = Math.round(peso*0.7)
+        let carbos_gramas = Math.round(carboidratos / 4) // foi calculado diretamente em kcal, por isso dividimos ao invés de multiplicar
+
         let kcal_refeicao = Math.round(ndc/refeicoes)
         let prot_refeicao = Math.round(proteina/refeicoes)
         let gord_refeicao = Math.round(gordura/refeicoes)
         let carb_refeicao = Math.round(carboidratos/refeicoes)
-        let fibra_refeicao = Math.round(130/refeicoes)
+        let fibra_refeicao = Math.round(140/refeicoes)
 
         document.querySelector('#consumo-kcal').innerHTML = ndc
-        document.querySelector('#result-prot').innerHTML = proteina+" Kcal"
-        document.querySelector('#result-gord').innerHTML = gordura+" Kcal"
-        document.querySelector('#result-carb').innerHTML = carboidratos+" Kcal"
+        document.querySelector('#result-prot').innerHTML = proteina+" Kcal / "+proteina_gramas+" g"
+        document.querySelector('#result-gord').innerHTML = gordura+" Kcal / "+gordura_gramas+" g"
+        document.querySelector('#result-carb').innerHTML = carboidratos+" Kcal / "+carbos_gramas+" g"
 
         document.querySelector('#kcal-refeicao').innerHTML = kcal_refeicao
-        document.querySelector('#refeicao-prot').innerHTML = prot_refeicao+" Kcal"
-        document.querySelector('#refeicao-gord').innerHTML = gord_refeicao+" Kcal"
-        document.querySelector('#refeicao-carb').innerHTML = carb_refeicao+" Kcal"
-        document.querySelector('#refeicao-fibra').innerHTML = fibra_refeicao+" Kcal";
+        document.querySelector('#refeicao-prot').innerHTML = prot_refeicao+" Kcal / "+Math.round(proteina_gramas/refeicoes)+" g"
+        document.querySelector('#refeicao-gord').innerHTML = gord_refeicao+" Kcal / "+Math.round(gordura_gramas/refeicoes)+" g"
+        document.querySelector('#refeicao-carb').innerHTML = carb_refeicao+" Kcal / "+Math.round(carbos_gramas/refeicoes)+" g"
+        document.querySelector('#refeicao-fibra').innerHTML = fibra_refeicao+" Kcal / "+Math.round(35/refeicoes)+" g"
 
         document.querySelector('.msg-resultado').scrollIntoView({behavior:'smooth', block:'start'});
     }

@@ -84,9 +84,12 @@ function increaseFont(){
             /* descobre o valor atual da fonte */
             let style = window.getComputedStyle(textos[i], null).getPropertyValue('font-size');
             let font_size = parseFloat(style);
+            let style_p = window.getComputedStyle(textos[i], null).getPropertyValue('padding');
+            let padding = parseFloat(style_p)
 
             /* Soma 2px ao valor que ja existe */
             textos[i].style.fontSize = (font_size + 2)+ 'px'
+            textos[i].style.padding = (padding + 1)+ 'px';
         }
 
         /* aumenta 1 na variavel de controle de quantas vezes ja houve aumento */
@@ -102,8 +105,11 @@ function decreaseFont(){
         for (i=0; i<textos.length; i++){
             let style = window.getComputedStyle(textos[i], null).getPropertyValue('font-size');
             let font_size = parseFloat(style);
+            let style_p = window.getComputedStyle(textos[i], null).getPropertyValue('padding');
+            let padding = parseFloat(style_p)
 
             textos[i].style.fontSize = (font_size - 2)+ 'px';
+            textos[i].style.padding = (padding - 1)+ 'px';
         }
         qnt_alter -= 1;
         console.log(qnt_alter);

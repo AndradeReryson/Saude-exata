@@ -11,7 +11,7 @@ html, body{
 .barra_acessibilidade{
     display: flex;
     width: 100%;
-    font-size: 1.4vw;
+    font-size: 1.2vw; /*mudei 1.4*/
 }
 
 .barra_acessibilidade div:nth-child(1){
@@ -198,7 +198,7 @@ nav{
 
 h2.titulo-pagina{
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw; /*mudei 2.0*/
     font-weight: bold;
     margin: 0;
 }
@@ -217,7 +217,7 @@ h2.titulo-pagina{
     align-self: center;
     display: flex;
     justify-content: center;
-    padding: 0 0 2% 0;
+    padding: 0; /*mudei 0 0 2%*/
     position: relative;
 }
 
@@ -292,7 +292,7 @@ h2.titulo-pagina{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vw;
+    font-size: 2vw; /*mudei 2.5*/
     font-weight: bold;
 }
 
@@ -335,6 +335,7 @@ h2.titulo-pagina{
     background-image: linear-gradient(#ffde59, #ff914d );
     padding: 1em;
     color: black;
+    overflow: hidden;
 }
 
 .resultado-small{
@@ -343,6 +344,7 @@ h2.titulo-pagina{
     padding: 1em;
     color: black;
     height: 60%;
+    overflow: hidden;
 }
 
 .box-num-input{
@@ -351,14 +353,14 @@ h2.titulo-pagina{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10% 0 3% 0 ;
+    padding: 2vw 0 2% 0 ; /*mudei 10% 0 5% 0 */
 }
 
 .box-radio-input{
     /*border: 2px white solid;*/
     position: relative;
-    display: flex;
-    padding: 2.7vw 0 5% 0;
+    display: flex; 
+    padding: 2vw 0 2% 0; /*mudei 2.7vw 0 5% 0*/
     justify-content: center;
     /**/
     flex-wrap: wrap;
@@ -368,7 +370,7 @@ h2.titulo-pagina{
     /*border: 2px white solid;*/
     position: relative;
     display: flex;
-    padding: 2.7vw 0 5% 0;
+    padding: 2vw 0 2% 0; /*mudei 2.7vw 0 5% 0*/
     justify-content: center;
     /**/
     flex-wrap: wrap;
@@ -380,6 +382,7 @@ h2.titulo-pagina{
     display:flex;
     align-items: center;
     /*justify-content: right;*/
+    margin-top: 5%;
     padding: 4% 2% 4% 2%;
     width: 100%;
     position: relative;
@@ -392,7 +395,7 @@ h2.titulo-pagina{
     background-color: #000;
     padding: 4% 6%;
     margin-left: 4%;
-    font-size: 1.1vw;
+    font-size: 1vw; /*mudei*/
     position: absolute;
     right: 7%;
 }
@@ -405,12 +408,12 @@ h2.titulo-pagina{
     position: absolute;
     top: 8%;
     left: 8%;
-    font-size: 1.1vw;
+    font-size: 0.9vw; /*mudei 1.1*/
     font-weight: bold;
 }
 
 .exemplo{
-    font-size: 1vw;
+    font-size: 0.8vw; /*mudei 1*/
     opacity: 0.5;
 }
 
@@ -420,22 +423,22 @@ h2.titulo-pagina{
 
 .calculadora input[type="text"]{ 
     display: inline-block;
-    padding: 3% 6%;
+    padding: 2% 4%; /*mudei 3% 6%*/
     width: 70%;
     text-align: center;
     border-radius: 1.3vw;
     border: none;
     font-family: helvetica, sans-serif;
-    font-size: 1.1vw;
+    font-size: 0.9vw; /*mudei 1.1*/
 }
 
 select{
-    padding: 3% 6%;
+    padding: 2% 4%; /*mudei 3% 6%*/
     width: 70%;
     border-radius: 1.3vw;
     border: none;
     font-family: helvetica, sans-serif;
-    font-size: 1.1vw;
+    font-size: 0.9vw; /*mudei 1.1*/
 }
 
 input[type="radio"]{
@@ -448,8 +451,8 @@ input[type="radio"]{
     color: #000;
     border: 2px #000 solid;
     border-radius: 10px;
-    padding: 3% 8%; 
-    font-size: 1.1vw;
+    padding: 3% 6%; /* mudei 3% 8% */
+    font-size: 0.9vw; /* mudei 1.1 */
     font-weight: bold;
     margin: 3% 1% 1% 1%;
 }
@@ -482,9 +485,9 @@ input[type="radio"]:checked + .label-radio::before{
 
 h2.titulo{
     text-align: center;
-    font-size: 2vw;
+    font-size: 1.5vw; /*mudei 2vw*/
     font-weight: bold;
-    margin: 0 0 5% 0;
+    margin: 0 0 3% 0; /*mudei 0 0 5% 0*/
 }
 
 .msg-resultado{
@@ -497,28 +500,29 @@ h2.titulo{
 
 .value_result{
     text-align: center;
-    font-size: 7vw;
+    font-size: 5vw; /*mudei 7vw*/
     margin: 0;
-    padding: 0 0 0.3em 0;
+    padding: 0 0 0.2em 0; /*mudei 0.3em*/
 }
 
 .caption_result{
-    font-size: 1.5vw;
+    text-align: center;
+    font-size: 1.2vw; /* mudei 1.5*/
     margin: 0;
 }
 
 #img_imc{
     position: absolute;
-    bottom: 2%;
+    bottom: 3%; /* mudei 2%*/
     margin: 6% 0 0 0;
     /*width: 12vw;*/
     min-height: 30%;
-    height: 55%;
+    height: 50%; /*mudei 55% */
     fill: white;
 }
 
 .tbl-resultado{
-    width: 70%;
+    width: 80%;
     background-color: transparent;
     margin-bottom: 2em;
 }
@@ -528,7 +532,7 @@ h2.titulo{
 }
 
 .tbl-resultado tr td{
-    font-size: 1.5vw;
+    font-size: 1.2vw; /*mudei 1.5vw*/
 }
 
 .tbl-resultado td.td-result{
@@ -548,7 +552,7 @@ h2.titulo{
 .placeholder h2{
     width: 75%;
     text-align: center;
-    font-size: 3vw;
+    font-size: 2vw; /* mudei 3vw*/
 }
 
 
@@ -558,7 +562,7 @@ h2.titulo{
     align-self: center;
     display: flex;
     flex-direction: column;
-    padding: 3% 0 3% 0;
+    padding: 2% 0 2% 0; /*mudei 3% 0 3% 0*/
     align-items: center;
     position: relative;
     font-family: helvetica;
@@ -567,7 +571,7 @@ h2.titulo{
 .box-info{
     width: 65%;
     background-image: linear-gradient(#ffde59, #ff914d );
-    padding: 1.6vw;
+    padding: 1.6vw; 
     margin: 0 0 2em 0;
     color: black;
     box-shadow: 1px 1px 2px #000;
@@ -583,11 +587,11 @@ h2.titulo{
 }
 
 .text-info{
-    font-size: 1.5vw;
+    font-size: 1.4vw; /* mudei 1.5vw*/
 }
 
 ol li{
-    font-size: 1.3vw;
+    font-size: 1vw; /*mudei 1.3vw */
 }
 
 ul.lista{
@@ -595,7 +599,7 @@ ul.lista{
 }
 
 ul.lista li, ul.lista{
-    font-size: 1.6vw;
+    font-size: 1.4vw; /* mudei 1.6vw*/
     margin: 0;
 }
 
@@ -608,11 +612,11 @@ table{
     margin: 0 0 2% 0;
 }
 
-table.tbl-small{
+table.tbl-small{ /* tabela usada nos textos */
     width: 50%;
 }
 
-table.tbl-big{
+table.tbl-big{ /* tabela usada nos textos */
     width: 85%;
 }
 
@@ -781,10 +785,6 @@ and (max-width: 1024px){
         width: 100%;
     }
 
-    .vlibras{
-        display: none;
-    }
-
     /* header */
     .logo{
         font-size: 3vw;
@@ -829,11 +829,11 @@ and (max-width: 1024px){
     }
 
     #btn-calc, #btn-limp{
-        font-size: 1.7vw;
+        font-size: 1.4vw;
     }
 
     .label{
-        font-size: 1.7vw;
+        font-size: 1.4vw;
     }
 
     .exemplo{
@@ -844,9 +844,10 @@ and (max-width: 1024px){
         font-size: 1.4vw;
     }
 
-    .box-radio-input, .box-select-input{
-        flex-wrap: wrap;
-        padding-top: 4.3vw;
+    .box-num-input,
+    .box-radio-input, 
+    .box-select-input{
+        padding-top: 3.3vw;
     }
 
     .label-radio{
@@ -862,7 +863,7 @@ and (max-width: 1024px){
     }
 
     select, option{
-        font-size: 1.6vw;
+        font-size: 1.4vw;
     }
 
     /* resultado */
@@ -871,12 +872,17 @@ and (max-width: 1024px){
         font-size: 2.5vw;
     }
 
+    h2.ph_text{
+        font-size: 2.5vw;
+    }
+
     .value_result{
-        font-size: 8vw;
+        padding: 0 0 0.5em 0;
+        font-size: 6vw;
     }
 
     .caption_result{
-        font-size: 1.7vw;
+        font-size: 2vw;
     }
 
     /* placeholder */
@@ -906,6 +912,10 @@ and (max-width: 1024px){
     }
     
     /* footer */
+
+    .rodape p{
+        font-size: 1.8vw;
+    }
 
     .rodape-titulo, .rodape-sub-titulo, .lista-links li a, .rodape-desc{
         font-size: 1.8vw;
@@ -937,10 +947,6 @@ and (max-width: 500px){
     .barra_acessibilidade div:nth-child(2){
         width: 100%;
         text-align: center;
-    }
-
-    .vlibras{
-        display: none;
     }
 
     #btn-font-plus, #btn-font-minus{
@@ -1073,9 +1079,10 @@ and (max-width: 500px){
         width: 70%;
     }
 
-    .box-radio-input, .box-select-input{
-        flex-wrap: wrap;
-        padding-top: 8.3vw;
+    .box-num-input,
+    .box-radio-input, 
+    .box-select-input{
+        padding-top: 8vw;
     }
 
     .resultado-big{
@@ -1105,7 +1112,7 @@ and (max-width: 500px){
     }
 
     .calculadora input[type="text"]{ 
-        font-size: 3.5vw;
+        font-size: 3.2vw;
     }
 
     .label-radio{
@@ -1136,15 +1143,15 @@ and (max-width: 500px){
     }
 
     .caption_result{
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     h2.ph_text{
-        font-size: 4.5vw;
+        font-size: 5vw;
     }
 
     .tbl-resultado tr td{
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     /* placeholder */

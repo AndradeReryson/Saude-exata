@@ -177,13 +177,13 @@ function calcularBF(){
                 document.querySelector('#bf_perder_leg').innerHTML = 'Ganho de gordura para chegar ao ideal'
             }
 
-            if(bf_porcent<=5){
+            if(bf_porcent<6){
                 bf_categoria = "Déficit"
-            } else if (bf_porcent>=6 && bf_porcent<=13){
+            } else if (bf_porcent>=6 && bf_porcent<14){
                 bf_categoria = "Atleta"
-            } else if (bf_porcent>=14 && bf_porcent<=17){
+            } else if (bf_porcent>=14 && bf_porcent<18){
                 bf_categoria = "Fitness"
-            } else if (bf_porcent>=18 && bf_porcent<=24){
+            } else if (bf_porcent>=18 && bf_porcent<25){
                 bf_categoria = "Normal"
             } else if (bf_porcent>=25){
                 bf_categoria =  "Obeso"
@@ -220,12 +220,12 @@ function calcularBF(){
 
             document.querySelector('#bf_perder_leg').innerHTML = 'Perda de gordura para chegar ao ideal'
 
-            if(bf_perder < 0){
+            if(bf_perder <= 0){
                 bf_perder = Math.abs(bf_perder)
                 document.querySelector('#bf_perder_leg').innerHTML = 'Ganho de gordura para chegar ao ideal'
             }
 
-            if(bf_porcent<=13){
+            if(bf_porcent<14){
                 bf_categoria = "Déficit"
             } else if (bf_porcent>=14 && bf_porcent<21){
                 bf_categoria = "Atleta"
