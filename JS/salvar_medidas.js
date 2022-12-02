@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(){
     if("idade" in localStorage){
-
         if(localStorage.sexo == "Femi"){
             $('#F').click()
         } else if (localStorage.sexo == "Masc"){
             $('#M').click()
         }
         document.querySelector('#idade').value = parseInt(localStorage.idade)
-        document.querySelector('#altura').value = parseFloat(localStorage.altura)
+
+        if("altura" in localStorage && localStorage.altura !== ''){
+            document.querySelector('#altura').value = parseFloat(localStorage.altura)
+        }
+        
         document.querySelector('#peso').value = parseFloat(localStorage.peso)
 
         if("pescoco" in localStorage){
@@ -43,9 +46,9 @@ let btn_salvar = document.querySelector('#btn-salvar')
 btn_salvar.addEventListener("click", function(){
 
     let sexo = document.querySelector('input[name="sexo"]:checked').value;
-    let idade = document.querySelector('#idade').value
-    let altura = document.querySelector('#altura').value
-    let peso = document.querySelector('#peso').value
+    let idade = document.querySelector('#idade').value;
+    let altura = document.querySelector('#altura').value;
+    let peso = document.querySelector('#peso').value;
     
 
     try {
@@ -61,22 +64,22 @@ btn_salvar.addEventListener("click", function(){
 
     try {
         let quadril = document.querySelector('#quadril').value
-        localStorage.setItem('quadril', quadril)
+        localStorage.setItem('quadril',quadril)
     } catch {}
 
     try {
         let nivel_ex = document.querySelector('#exercicios').value
-        localStorage.setItem('exercicios', nivel_ex)
+        localStorage.setItem('exercicios',nivel_ex)
     } catch {}
     
     try {
         let objetivo = document.querySelector('#objetivo').value
-        localStorage.setItem('objetivo', objetivo)
+        localStorage.setItem('objetivo',objetivo)
     } catch {}
     
     try {
         let refeicoes = document.querySelector('#refeicoes').value
-        localStorage.setItem('refeicoes', refeicoes)
+        localStorage.setItem('refeicoes',refeicoes)
     } catch {}
     
 
@@ -110,7 +113,7 @@ btn_limpar.addEventListener("keypress", function(x){
     }
 });
 
-/* animação da caixa */
+/* animação da caixa modal */
 function callModal(texto, cor){
     $('#modal_text').text(texto)
     $('.modal-box').animate(

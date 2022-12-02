@@ -132,13 +132,6 @@ function calcularBF(){
 
         altura = altura / 0.01
 
-        console.log(altura)
-        console.log(peso)
-        console.log(pescoco)
-        console.log(cintura)
-        console.log(quadril)
-        
-
         let bf_porcent = 0
         let bf_ideal = 0
         let bf_perder = 0

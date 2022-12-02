@@ -465,6 +465,7 @@ select{
     border-radius: 1.3vw;
     border: none;
     font-family: helvetica, sans-serif;
+    background-color: #fff;
     font-size: 0.9vw;
 }
 
@@ -1240,7 +1241,12 @@ and (max-width: 500px){
     }
 
     .caption_result{
+        width: 90%;
         font-size: 4vw;
+    }
+
+    #img_imc{
+        height: 70%;
     }
 
     h2.ph_text{

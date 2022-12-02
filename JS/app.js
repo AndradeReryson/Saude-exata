@@ -188,16 +188,3 @@ $(document).ready(function(){
     $('#refeicoes').mask('99')
 })
 
-/*
-$('#peso').on('input',function(){
-    let tamanho = $('#peso').val()
-    console.log(tamanho)
-    console.log(tamanho.length)
-    if(tamanho.length === 6){
-        $('#peso').unmask()
-    } else {
-        
-    }
-})
-*/
-
