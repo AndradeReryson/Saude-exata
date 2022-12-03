@@ -188,3 +188,20 @@ $(document).ready(function(){
     $('#refeicoes').mask('99')
 })
 
+/* animação, cor e texto da caixa modal */
+function callModal(texto, cor){
+    $('.modal_text').text(texto)
+    $('.modal_text').css({"backgroundColor": cor})
+    
+    if(localStorage.css == "CSS/contraste.css"){
+        $('.modal_text').css({"backgroundColor": "#000"})
+    }
+
+    $('.modal-box').animate(
+        {top: "3%"}, {duration: 500}
+    ).animate(
+        {top: "3%"},{duration: 3000}
+    ).animate(
+        {top: "-50%"}, {duration: 500}
+    )
+}

@@ -107,13 +107,13 @@ function calcularBF(){
 
 
     if (idade.length < 1 || altura.length < 1 || peso.length < 1 || pescoco.length < 1 || cintura.length < 1){
-        alert("Por favor, preencha todos os campos");
+        callModal("Por favor, preencha todos os campos", "#ff7676")
         document.querySelector('input[name="sexo"]:checked').focus();  
     } else {
 
         /* caso o sexo seja feminino o campo quadril vai ter que ser preenchido */
         if (sexo == 'Femi' && quadril.length < 1){
-            alert("Por favor, preencha todos os campos");
+            callModal("Por favor, preencha todos os campos", "#ff7676")
             document.querySelector('input[name="sexo"]:checked').focus();
             return
         } 

@@ -427,7 +427,14 @@ h2.titulo-pagina{
     border: 2px solid #fff;
 }
 
-#btn-calc:hover, #btn-limp:hover{
+#btn-limpar img, #btn-salvar img{
+    height: 100%;
+    width: 100%;
+}
+
+#btn-limpar:hover,
+#btn-salvar:hover,
+#btn-calc:hover{
     cursor: pointer;
 }
 
@@ -595,7 +602,7 @@ h2.titulo{
     z-index: 20;
 }
 
-.modal-box #modal_text{
+.modal-box .modal_text{
     font-family: Helvetica, Arial, sans-serif;
     align-self: center;
     text-align: center;
@@ -966,7 +973,7 @@ and (max-width: 1024px){
 
     /* modal box */
 
-    .modal-box #modal_text{
+    .modal-box .modal_text{
         width: 50%;
         font-size: 2vw;
     }
@@ -1261,7 +1268,7 @@ and (max-width: 500px){
 
     /* modal box */
 
-    .modal-box #modal_text{
+    .modal-box .modal_text{
         width: 70%;
         padding: 3%;
         font-size: 3.5vw;

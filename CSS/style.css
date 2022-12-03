@@ -426,7 +426,9 @@ h2.titulo-pagina{
     width: 100%;
 }
 
-#btn-calc:hover, #btn-limp:hover{
+#btn-limpar:hover,
+#btn-salvar:hover,
+#btn-calc:hover{
     cursor: pointer;
 }
 
@@ -595,14 +597,15 @@ h2.titulo{
     z-index: 20;
 }
 
-.modal-box #modal_text{
+
+.modal-box .modal_text{
     font-family: Helvetica, Arial, sans-serif;
     align-self: center;
     text-align: center;
     padding: 2%;
     width: 30%;
     height: 20%;
-    background-color: #76ff8a;
+    background-color: #dcdcdc;
     border-radius: 5vw;
     box-shadow: 0.5vw 0.5vw 0.5vw black;
     font-size: 1.2vw;
@@ -948,7 +951,7 @@ and (max-width: 1024px){
 
     /* modal box */
 
-    .modal-box #modal_text{
+    .modal-box .modal_text{
         width: 50%;
         font-size: 2vw;
     }
@@ -1236,7 +1239,7 @@ and (max-width: 500px){
 
     /* modal box */
 
-    .modal-box #modal_text{
+    .modal-box .modal_text{
         width: 70%;
         padding: 3%;
         font-size: 3.5vw;

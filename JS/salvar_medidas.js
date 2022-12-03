@@ -89,7 +89,7 @@ btn_salvar.addEventListener("click", function(){
     localStorage.setItem('peso',peso)
 
     // chama a caixa modal pra confirmar que foi salvo
-    callModal("Seus dados foram salvos com sucesso")
+    callModal("Seus dados foram salvos com sucesso", "#76ff8a")
 })
 
 btn_salvar.addEventListener("keypress", function(x){
@@ -103,7 +103,16 @@ btn_salvar.addEventListener("keypress", function(x){
 
 let btn_limpar = document.querySelector('#btn-limpar')
 btn_limpar.addEventListener("click", function(){
-    localStorage.clear()
+    localStorage.removeItem('sexo')
+    localStorage.removeItem('idade')
+    localStorage.removeItem('altura')
+    localStorage.removeItem('peso')
+    localStorage.removeItem('pescoco')
+    localStorage.removeItem('cintura')
+    localStorage.removeItem('quadril')
+    localStorage.removeItem('nivel_ex')
+    localStorage.removeItem('objetivo')
+    localStorage.removeItem('refeicoes')
     document.location.reload()
 })
 
@@ -113,17 +122,6 @@ btn_limpar.addEventListener("keypress", function(x){
     }
 });
 
-/* animação da caixa modal */
-function callModal(texto, cor){
-    $('#modal_text').text(texto)
-    $('.modal-box').animate(
-        {top: "3%"}, {duration: 500}
-    ).animate(
-        {top: "3%"},{duration: 3000}
-    ).animate(
-        {top: "-50%"}, {duration: 500}
-    )
-}
 
 
 

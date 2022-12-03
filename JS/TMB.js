@@ -77,7 +77,7 @@ function calcularTMB(){
     nivel_ex = parseFloat(nivel_ex)
 
     if (idade.length < 1 || altura.length < 1 || peso.length < 1){
-        alert("Por favor, preencha todos os campos");
+        callModal("Por favor, preencha todos os campos", "#ff7676")
         document.querySelector('input[name="sexo"]:checked').focus();
     } else {
 
