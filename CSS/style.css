@@ -947,6 +947,14 @@ and (max-width: 1024px){
         font-size: 2vw;
     }
 
+    .tbl-resultado{
+        width: 90%;
+    }
+
+    .tbl-resultado tr td{
+        font-size: 1.6vw;
+    }
+
     /* placeholder */
 
     /* modal box */
@@ -1229,6 +1237,10 @@ and (max-width: 500px){
 
     h2.ph_text{
         font-size: 5vw;
+    }
+
+    .tbl-resultado{
+        width: 90%;
     }
 
     .tbl-resultado tr td{
