@@ -1,6 +1,6 @@
-# Saúde Exata - Calculadoras de indíces corporais
+# Saúde Exata - Calculadoras de índices corporais
 ## Descrição
-O website Saúde Exata oferece ao usuário quatro calculadoras de indíces corporais, sendo elas:
+O website Saúde Exata oferece ao usuário quatro calculadoras de índices corporais, sendo elas:
   - Calculadora de peso ideal (IMC);
   - Calculadora de taxa metabólica basal (TMB);
   - Calculadora de gordura corporal (BF);
