@@ -5,6 +5,7 @@ O website Saúde Exata oferece ao usuário quatro calculadoras de índices corpo
   - Calculadora de taxa metabólica basal (TMB);
   - Calculadora de gordura corporal (BF);
   - Calculadora de macros.
+  - É muito legal
 
 O objetivo do site é ajudar pessoas que buscam cuidar de sua saúde a se orientar em relação a qual seu peso ideal, quanta gordura deve ser perdida, quantas calorias devem ser consumidas por dia, quais alimentos devem ser consumidos etc. 
 
