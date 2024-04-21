@@ -1,0 +1,10 @@
+Atividade referente a data 20/04/2024
+Atividade de Fork no GitHub.
+
+- Fork de um repositório de um colega.
+- Criar uma branch nova a partir da 'main/master'
+- Alteração do projeto.
+- 'Subir' as modificações no GitHub.
+- Dar merge entre as branches
+- Solicitar o pullrequest do repositório inicial.
+Obs. O colega tem que aceitar o pullrequest e dar o merge com o código novo.
